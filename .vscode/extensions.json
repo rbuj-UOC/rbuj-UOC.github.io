@@ -1,0 +1,11 @@
+{
+	"recommendations": [
+    "EditorConfig.EditorConfig",
+		"HTMLHint.vscode-htmlhint",
+    "esbenp.prettier-vscode",
+    "ritwickdey.LiveServer",
+		"streetsidesoftware.code-spell-checker",
+		"streetsidesoftware.code-spell-checker-catalan",
+		"formulahendry.auto-rename-tag"
+	]
+}
