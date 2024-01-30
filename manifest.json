@@ -1,0 +1,11 @@
+{
+    "name": "rbuj@UOC",
+    "short_name": "rbuj@UOC",
+    "icons": [{
+        "src": "img/google-touch-icon.png",
+        "sizes": "512x512"
+    }],
+    "background_color": "#ffffff",
+    "theme_color": "#ffffff",
+    "display": "fullscreen"
+}
