@@ -17,6 +17,16 @@ function myFunction(){
   navigator.clipboard.writeText('/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/rbuj-UOC/rbuj-UOC.github.io/refs/heads/main/init.sh)"');
 }
 
+// Generar el copyright dinàmicament
+(function(){
+  var copyrightYear=new Date().getFullYear();
+  var copyrightText='© '+copyrightYear+' Robert Buj';
+  var copyrightElement=document.getElementById('copyright-year');
+  if(copyrightElement){
+    copyrightElement.textContent=copyrightText;
+  }
+})();
+
 // Inicialitzar els botons per commutar la visibilitat de les assignatures
 document.addEventListener('DOMContentLoaded',function(){
   // Botons per expandir/col·lapsar totes les assignatures d'un curs
