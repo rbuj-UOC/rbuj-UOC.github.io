@@ -17,4 +17,7 @@
     "Microserveis",
     "rbuj"
   ],
+  "[html]": {
+    "editor.defaultFormatter": "vscode.html-language-features"
+  },
 }

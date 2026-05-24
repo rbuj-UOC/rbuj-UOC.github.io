@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+<meta charset="UTF-8">
+<title>Calendari acadèmic</title>
+
+<style>
+  body { font-family: sans-serif; }
+  .year { text-align: center; font-size: 2em; margin: 20px 0; }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .month {
+    border: 1px solid #ccc;
+    padding: 10px;
+  }
+  .month-name {
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.8em;
+  }
+  th, td {
+    text-align: center;
+    padding: 3px;
+    height: 22px;
+  }
+  th {
+    border-bottom: 1px solid #ccc;
+  }
+  .inici-curs {
+    background: blue;
+    color: white;
+  }
+  .notes-finals {
+    border: 2px solid green;
+    background-color: lightgreen;
+    color: green;
+  }
+  .aep {
+    border: 2px solid red;
+    color: white;
+    background-color: lightcoral;
+  }
+  .actiu {
+    border: none;
+    color: gray;
+    background-color: lightgray;
+  }
+  .vacances {
+    border: none;
+  }
+  td .day-number {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 24px;
+    height: 24px;
+    border-radius: 50%;
+  }
+  td.avui .day-number {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    min-width: 24px !important;
+    height: 24px !important;
+    border-radius: 50% !important;
+    background-color: red !important;
+    color: white !important;
+    border: 2px solid red !important;
+    font-weight: bold !important;
+  }
+</style>
+</head>
+
+<body>
+
+<div id="calendar"></div>
+<div style="text-align:center; margin-top:10px;">
+  <span style="border:2px solid red; padding:2px 6px; margin-right:6px;"></span>
+  AEP
+</div>
+<div style="text-align:center; margin-top:10px;">
+  <span style="border:2px solid blue; padding:2px 6px; margin-right:6px;"></span>
+  Inici del curs
+</div>
+<div style="text-align:center; margin-top:10px;">
+  <span style="border:2px solid green; padding:2px 6px; margin-right:6px;"></span>
+  Notes finals
+</div>
+
+<script>
+function generarCalendari() {
+  const mesos = [
+    "Gener", "Febrer", "Març", "Abril", "Maig", "Juny",
+    "Juliol", "Agost", "Setembre", "Octubre", "Novembre", "Desembre"
+  ];
+
+  const diesSetmana = ["Dl", "Dt", "Dc", "Dj", "Dv", "Ds", "Dg"];
+
+  // Inici curs
+  const iniciCurs = new Set([
+    "02-18", "09-23"
+  ]);
+
+  // Notes finals
+  const notesFinals = new Set([
+    "02-03", "02-04",
+    "06-30",
+    "07-01"
+  ]);
+
+  // AEP del 8 d'abril al 6 de maig, i del 31 d'octubre al 26 de novembre
+  let aep = new Set();
+  for (let mes = 3; mes <= 4; mes++) {
+    for (let dia = 1; dia <= 30; dia++) {
+      const key = String(mes + 1).padStart(2, "0") + "-" + String(dia).padStart(2, "0");
+      if (mes === 3 && dia < 8) continue; // Comença el 8 d'abril
+      if (mes === 4 && dia > 6) break; // Acaba el 6 de maig
+      aep.add(key);
+    }
+  }
+  for (let mes = 9; mes <= 10; mes++) {
+    for (let dia = 1; dia <= 31; dia++) {
+      const key = String(mes + 1).padStart(2, "0") + "-" + String(dia).padStart(2, "0");
+      if (mes === 9 && dia < 31) continue; // Comença el 31 d'octubre
+      if (mes === 10 && dia > 26) break; // Acaba el 26 de novembre
+      aep.add(key);
+    }
+  }
+  // Vacances del 2 de juliol al 22 de setembre i del 5 al 17 de febrer
+  let vacances = new Set();
+  for (let mes = 6; mes <= 8; mes++) {
+    for (let dia = 1; dia <= 31; dia++) {
+      const key = String(mes + 1).padStart(2, "0") + "-" + String(dia).padStart(2, "0");
+      if (mes === 6 && dia < 2) continue; // Comença el 2 de juliol
+      if (mes === 8 && dia > 22) break; // Acaba el 22 de setembre
+      vacances.add(key);
+    }
+  }
+  for (let dia = 5; dia <= 17; dia++) {
+    const key = "02-" + String(dia).padStart(2, "0");
+    vacances.add(key);
+  }
+
+  const avui = new Date();
+  const avuiAny = avui.getFullYear();
+  const avuiMes = avui.getMonth();
+  const avuiDia = avui.getDate();
+  const anyActual = avuiMes >= 8 ? avuiAny : avuiAny - 1;
+  const rangMesos = [];
+
+  for (let mes = 8; mes <= 11; mes++) {
+    rangMesos.push({ any: anyActual, mes });
+  }
+  for (let mes = 0; mes <= 7; mes++) {
+    rangMesos.push({ any: anyActual + 1, mes });
+  }
+
+  let html = `<div class="year">Calendari ${anyActual}-${anyActual + 1}</div><div class="grid">`;
+
+  rangMesos.forEach(({ any, mes }) => {
+    const primerDia = new Date(any, mes, 1).getDay();
+    const diesMes = new Date(any, mes + 1, 0).getDate();
+    const offset = (primerDia === 0 ? 6 : primerDia - 1);
+
+    html += `<div class="month">
+               <div class="month-name">${mesos[mes]} ${any}</div>
+               <table><tr>`;
+
+    diesSetmana.forEach(d => html += `<th>${d}</th>`);
+    html += `</tr><tr>`;
+
+    for (let i = 0; i < offset; i++) html += `<td></td>`;
+
+    for (let dia = 1; dia <= diesMes; dia++) {
+      const key = String(mes + 1).padStart(2, "0") + "-" + String(dia).padStart(2, "0");
+      let classe = "";
+      const esAvui = any === avuiAny && mes === avuiMes && dia === avuiDia;
+      if (notesFinals.has(key)) {
+        classe = "notes-finals";
+      } else if (iniciCurs.has(key)) {
+        classe = "inici-curs";
+      } else if (aep.has(key)) {
+        classe = "aep";
+      } else if (vacances.has(key)) {
+        classe = "vacances";
+      } else {
+        classe = "actiu";
+      }
+      if (esAvui) {
+        classe += " avui";
+      }
+
+      html += `<td class="${classe}"><span class="day-number">${dia}</span></td>`;
+      if ((dia + offset) % 7 === 0) html += `</tr><tr>`;
+    }
+
+    html += `</tr></table></div>`;
+  });
+
+  html += `</div>`;
+  document.getElementById("calendar").innerHTML = html;
+}
+
+generarCalendari();
+</script>
+
+</body>
+</html>

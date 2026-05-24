@@ -8,6 +8,10 @@
   --color-secundari: rgb(56, 118, 191);
   --color-terciari: rgb(225, 170, 116);
   --color-quaternari: rgb(243, 240, 202);
+  --color-quinari: rgb(155, 162, 169);
+  --color-sis: rgb(102, 153, 204);
+  --color-set: rgb(30, 70, 120);
+  --color-vuit: rgb(156, 224, 219);
   --color-fons: rgb(250, 250, 250);
   --color-active-menu: rgb(182, 218, 255);
   --color-menu: rgb(225, 170, 116);
@@ -62,11 +66,32 @@ a:link,
 a:visited,
 a:active {
   text-decoration: none;
-  color: var(--color-link);
+  color: color-mix(in srgb, var(--color-link) 90%, black);
 }
 
 a:hover {
   color: var(--color-terciari);
+}
+
+ul.course-list {
+  list-style-type: none;
+  padding-left: 0;
+  margin-bottom: 16px;
+  font-family: 'Lora', serif;
+  font-weight: 300;
+  margin-bottom: 32px;
+
+  a:link,
+  a:visited,
+  a:active {
+    text-decoration: none;
+    color: var(--color-quaternari);
+    font-size: large;
+  }
+
+  a:hover {
+    color: var(--color-terciari);
+  }
 }
 
 .container {
@@ -94,10 +119,9 @@ nav a:hover {
   color: var(--color-secundari) !important;
 }
 
-nav li:not(:last-child) {
-  border-right: 2px solid var(--color-quaternari);
-  padding-right: 8px;
-  margin-right: 6px;
+nav li:not(:last-child)::after {
+  content: ",";
+  margin-right: 0.5em;
 }
 
 .clear {
@@ -145,7 +169,7 @@ nav li:not(:last-child) {
 }
 
 .subject {
-  background-color: var(--color-fons);
+  background-color: color-mix(in srgb, var(--color-sis) 10%, white) !important;
   border-radius: 16px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   font-weight: 600;
@@ -217,11 +241,11 @@ nav li:not(:last-child) {
 }
 
 .anivelladora {
-  background-color: #9ce0db !important;
+  background-color: color-mix(in srgb, var(--color-vuit) 50%, white) !important;
 }
 
 .tbd {
-  background-color: #c7c1c3 !important;
+  background-color: color-mix(in srgb, var(--color-set) 50%, white) !important;
 }
 
 .todo-Q1 {
@@ -233,11 +257,11 @@ nav li:not(:last-child) {
 }
 
 .convalidada {
-  background-color: DarkSeaGreen !important;
+  background-color: color-mix(in srgb, var(--color-quinari) 50%, white) !important;
 }
 
 .todo-WIP {
-  background-color: var(--color-terciari) !important;
+  background-color: color-mix(in srgb, var(--color-terciari) 60%, white) !important;
 }
 
 .todo-WIP a:hover {
@@ -410,4 +434,50 @@ nav li {
 .programming-language {
   display: inline-block;
   vertical-align: middle;
+}
+
+.containerLlistaClonar {
+  display: grid;
+  grid-template-columns: auto auto;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+
+#clonar {
+  margin-top: 40px;
+  margin-bottom: 10px;
+}
+
+.credits-charts-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 27px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.chart-box {
+  width: 200px;
+  height: 240px;
+  background: transparent;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.chart-title {
+  color: var(--color-quaternari);
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 10px;
+  font-size: 0.9rem;
+  font-family: 'Lora', serif;
+}
+
+.chart-box canvas {
+  max-width: 200px;
+  max-height: 200px;
 }

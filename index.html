@@ -14,75 +14,73 @@
  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
  <link rel="stylesheet" href="css/estil.css">
  <link rel="manifest" href="manifest.json">
+ <script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.1/dist/chart.umd.min.js"></script>
 </head>
 
 <body>
  <header>
    <nav class="container">
-     <ul>
-       <li><a href="index.html" class="current">25/26 Q2</a></li>
-       <li><a href="index.2026-27.Q1.html">26/27 Q1</a></li>
-       <li><a href="index.2026-27.Q2.html">26/27 Q2</a></li>
-       <li><a href="index.2027-28.Q1.html">27/28 Q1</a></li>
-       <li><a href="index.2027-28.Q2.html">27/28 Q2</a></li>
-       <li><a href="index.2028-29.Q1.html">28/29 Q1</a></li>
-       <li><a href="index.2028-29.Q2.html">28/29 Q2</a></li>
-     </ul>
+     <ul id="nav"></ul>
    </nav>
  </header>
  <main class="container">
    <h1>Cursos de postgrau a la UOC</h1>
 
-   <div class="course-no-expandable">
-     <h2><button onclick="myFunction()" class="button button4">Copia al porta-retalls</button></h2>
-     <div class="course-content">
-         /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/rbuj-UOC/rbuj-UOC.github.io/refs/heads/main/init.sh)"
-     </div>
-   </div>
+   <canvas id="graficaCredits"></canvas>
+
+  <div class="containerLlistaClonar">
+    <div id="clonar">
+      <ul class="course-list">
+        <li>
+          <a href="#MUCD">Màster universitari en ciències de dades</a>
+        </li>
+        <li>
+          <a href="#MUBB">Màster universitari en bioinformàtica i bioestadística</a>
+        </li>
+        <li>
+          <a href="#MUCP">Màster universitari en ciberseguretat i privadesa</a>
+        </li>
+        <li>
+          <a href="#MUEI">Màster universitari en enginyeria informàtica</a>
+        </li>
+        <li>
+          <a href="#EP">Escola de programació</a>
+        </li>
+        <li>
+          <a href="#MUDLA">🎓 Màster universitari en desenvolupament de llocs i aplicacions web</a>
+        </li>
+        <li>
+          <a href="#EI">Escola d'idiomes</a>
+        </li>
+        <li>
+          <a href="#MUPLL">Màster universitari en programari lliure</a>
+        </li>
+        <li>
+          <a href="#MNET">🎓 Màster en .NET</a>
+        </li>
+      </ul>
+    </div>
+
+    <div id="percentatge">
+      <canvas id="graficaPercentatge"></canvas>
+    </div>
+  </div>
+
+   <div id="creditsChartsGrid" class="credits-charts-grid"></div>
 
    <div class="course">
-     <h2>Màster universitari en ciències de dades (36 ECTS)</h2>
+     <h2 id="MUCD">Màster universitari en ciències de dades (54 ECTS)</h2>
      <div class="course-content">
        <div class="dashboard">
-
-         <div class="subject clearfix">
-           <h3><a href="http://hdl.handle.net/10609/151790" target="_blank" rel="noopener noreferrer">Anàlisi estadística</a></h3>
-           <div class="subject-body">
-             <ul dir="auto">
-               <li>LAB: <a href="https://github.com/rbuj-UOC/python-cat" target="_blank" rel="noopener noreferrer">Python</a></li>
-               <li>LAB: <a href="https://github.com/rbuj-UOC/r-cat" target="_blank" rel="noopener noreferrer">R</a></li>
-             </ul>
-             <br>
-             <ul>
-               <li>
-                 PAC1: <a href="https://github.com/rbuj-UOC/M2.990-PAC1" target="_blank" rel="noopener noreferrer">resposta</a>
-                 <img src="img/R.svg" alt="R" title="R" class="programming-language" loading="lazy" width="16" height="16">
-               </li>
-               <li>
-                 PAC2: <a href="https://github.com/rbuj-UOC/M2.990-PAC2" target="_blank" rel="noopener noreferrer">resposta</a>
-                 <img src="img/R.svg" alt="R" title="R" class="programming-language" loading="lazy" width="16" height="16">
-               </li>
-               <li>
-                 PAC3: <a href="https://github.com/rbuj-UOC/M2.990-PAC3" target="_blank" rel="noopener noreferrer">resposta</a>
-                 <img src="img/R.svg" alt="R" title="R" class="programming-language" loading="lazy" width="16" height="16">
-               </li>
-               <li>
-                 PAC4: <a href="https://github.com/rbuj-UOC/M2.990-PAC4" target="_blank" rel="noopener noreferrer">resposta</a>
-                 <img src="img/R.svg" alt="R" title="R" class="programming-language" loading="lazy" width="16" height="16">
-               </li>
-             </ul>
-             <br>
-             Grau de Ciència de Dades Aplicada
-             <ul dir="auto">
-               <li>22.404: <a href="http://hdl.handle.net/10609/151289" target="_blank" rel="noopener noreferrer">Àlgebra lineal</a></li>
-               <li>22.407: <a href="http://hdl.handle.net/10609/151704" target="_blank" rel="noopener noreferrer">Probabilitat i estadística</a></li>
-             </ul>
-           </div>
-         </div>
 
          <div class="subject clearfix convalidada">
            <h3>Aprenentatge automàtic</h3>
            <div class="subject-body">
+             Màster en Ciències de Dades
+             <ul dir="auto">
+               <li>M2.955: <a href="https://github.com/rbuj-UOC/UOC_M2.955" target="_blank" rel="noopener noreferrer">Models avançats de mineria de dades</a></li>
+             </ul>
+             <br>
              Grau en Ciència de Dades Aplicada
              <ul dir="auto">
                <li>22.418: <a href="https://github.com/rbuj-UOC/22.418" target="_blank" rel="noopener noreferrer">Aprenentatge automàtic</a></li>
@@ -114,10 +112,6 @@
            </div>
          </div>
 
-         <div class="subject clearfix">
-           <h3><a href="https://hdl.handle.net/10609/141586" target="_blank" rel="noopener noreferrer">Fonaments de la ciència de dades</a></h3>
-         </div>
-
          <div class="subject clearfix anivelladora">
            <h3><a href="https://github.com/rbuj-UOC/python_datascience/" target="_blank" rel="noopener noreferrer">Programació per a la ciència de dades</a></h3>
            <div class="subject-body">
@@ -146,6 +140,30 @@
                <li>22.403: <a href="https://github.com/rbuj-UOC/22.403" target="_blank" rel="noopener noreferrer">Programació per a la Ciència de dades</a></li>
              </ul>
            </div>
+         </div>
+
+         <div class="subject clearfix">
+           <h3><a href="http://hdl.handle.net/10609/151790" target="_blank" rel="noopener noreferrer">Anàlisi estadística</a></h3>
+           <div class="subject-body">
+             <ul dir="auto">
+               <li>LAB: <a href="https://github.com/rbuj-UOC/python-cat" target="_blank" rel="noopener noreferrer">Python</a></li>
+               <li>LAB: <a href="https://github.com/rbuj-UOC/r-cat" target="_blank" rel="noopener noreferrer">R</a></li>
+               <li>
+                 PACS: <a href="https://github.com/rbuj-UOC/M2.990" target="_blank" rel="noopener noreferrer">resposta</a>
+                 <img src="img/R.svg" alt="R" title="R" class="programming-language" loading="lazy" width="16" height="16">
+               </li>
+             </ul>
+             <br>
+             Grau de Ciència de Dades Aplicada
+             <ul dir="auto">
+               <li>22.404: <a href="http://hdl.handle.net/10609/151289" target="_blank" rel="noopener noreferrer">Àlgebra lineal</a></li>
+               <li>22.407: <a href="http://hdl.handle.net/10609/151704" target="_blank" rel="noopener noreferrer">Probabilitat i estadística</a></li>
+             </ul>
+           </div>
+         </div>
+
+         <div class="subject clearfix">
+           <h3><a href="https://hdl.handle.net/10609/141586" target="_blank" rel="noopener noreferrer">Fonaments de la ciència de dades</a></h3>
          </div>
 
          <div class="subject clearfix">
@@ -199,68 +217,66 @@
            </div>
          </div>
 
-         <div class="subject clearfix todo-WIP">
+         <div class="subject clearfix">
            <h3>Anàlisi de dades en entorns Big Data</h3>
+           <div class="subject-body">
+             <ul dir="auto">
+               <li>
+                 PAC1: <a href="https://github.com/rbuj-UOC/M2.958-PAC1" target="_blank" rel="noopener noreferrer">resposta</a>
+                 <img src="img/python.svg" alt="Python" title="Python" class="programming-language" loading="lazy" width="16" height="16">
+               </li>
+               <li>
+                 PAC2: <a href="https://github.com/rbuj-UOC/M2.958-PAC2" target="_blank" rel="noopener noreferrer">resposta</a>
+                 <img src="img/python.svg" alt="Python" title="Python" class="programming-language" loading="lazy" width="16" height="16">
+               </li>
+               <li>
+                 PAC3: <a href="https://github.com/rbuj-UOC/M2.958-PAC3" target="_blank" rel="noopener noreferrer">resposta</a>
+                 <img src="img/python.svg" alt="Python" title="Python" class="programming-language" loading="lazy" width="16" height="16">
+               </li>
+             </ul>
+           </div>
          </div>
 
-         <div class="subject clearfix todo-WIP">
+         <div class="subject clearfix">
            <h3>Arquitectures de bases de dades no relacionals</h3>
+           <div class="subject-body">
+             <ul dir="auto">
+               <li>
+                 Pràctica: <a href="https://github.com/rbuj-UOC/M2.989-PRA1" target="_blank" rel="noopener noreferrer">resposta</a>
+               </li>
+             </ul>
+           </div>
+         </div>
+
+         <div class="subject clearfix">
+           <h3>Deep learning</h3>
+           <div class="subject-body">
+             <ul dir="auto">
+               <li>Deep Learning: <a href="https://hdl.handle.net/10609/153482" target="_blank" rel="noopener noreferrer">llibre</a>, <a href="https://github.com/rbuj-UOC/Libro-Deep-Learning" target="_blank" rel="noopener noreferrer">codi</a></li>
+             </ul>
+             <br>
+             <ul>
+               <li>
+                 PAC1: <a href="https://github.com/rbuj-UOC/M2.975-PAC1" target="_blank" rel="noopener noreferrer">resposta</a>
+                 <img src="img/python.svg" alt="python" title="Python" class="programming-language" loading="lazy" width="16" height="16">
+               </li>
+               <li>
+                 PAC2: <a href="https://github.com/rbuj-UOC/M2.975-PAC2" target="_blank" rel="noopener noreferrer">resposta</a>
+                 <img src="img/python.svg" alt="python" title="Python" class="programming-language" loading="lazy" width="16" height="16">
+               </li>
+               <li>
+                 PAC3: <a href="https://github.com/rbuj-UOC/M2.975-PAC3" target="_blank" rel="noopener noreferrer">resposta</a>
+                 <img src="img/python.svg" alt="python" title="Python" class="programming-language" loading="lazy" width="16" height="16">
+               </li>
+               <li>
+                 PAC4: <a href="https://github.com/rbuj-UOC/M2.975-PAC4" target="_blank" rel="noopener noreferrer">resposta</a>
+                 <img src="img/python.svg" alt="python" title="Python" class="programming-language" loading="lazy" width="16" height="16">
+               </li>
+             </ul>
+           </div>
          </div>
 
          <div class="subject clearfix todo-WIP">
-           <h3>Deep learning</h3>
-         </div>
-
-         <div class="subject clearfix tbd">
-           <h3>TFM</h3>
-         </div>
-
-       </div>
-     </div>
-   </div>
-
-   <div class="course-no-expandable">
-     <h2>Màster universitari en bioinformàtica i bioestadística (UOC, UB) (0 ECTS)</h2>
-     <div class="course-content">
-       <div class="dashboard">
-
-         <div class="subject clearfix convalidada">
-           <h3>Inferència estadística</h3>
-         </div>
-
-         <div class="subject clearfix convalidada">
-           <h3>Programació per a la bioinformàtica</h3>
-         </div>
-
-         <div class="subject clearfix  todo-WIP">
-           <h3>Biologia molecular</h3>
-         </div>
-
-         <div class="subject clearfix  todo-WIP">
-           <h3>Programari per a l'anàlisi de dades</h3>
-         </div>
-
-         <div class="subject clearfix tbd">
-           <h3>Regressió, models i mètode</h3>
-         </div>
-
-         <div class="subject clearfix tbd">
-           <h3>Genòmica computacional</h3>
-         </div>
-
-         <div class="subject clearfix tbd">
-           <h3>Anàlisi de dades òmiques</h3>
-         </div>
-
-         <div class="subject clearfix  tbd">
-           <h3>Optativa 2</h3>
-         </div>
-
-         <div class="subject clearfix tbd">
-           <h3>Optativa 3</h3>
-         </div>
-
-         <div class="subject clearfix tbd">
            <h3>TFM</h3>
          </div>
 
@@ -269,11 +285,344 @@
    </div>
 
    <div class="course">
-     <h2>Escola de Programació (30 ECTS)</h2>
+     <h2 id="MUBB">Màster universitari en bioinformàtica i bioestadística (UOC, UB) (10 ECTS)</h2>
+     <div class="course-content">
+       <div class="dashboard">
+
+         <div class="subject clearfix convalidada">
+           <h3>Inferència estadística</h3>
+         </div>
+
+         <div class="subject clearfix convalidada">
+           <h3>Machine Learning</h3>
+         </div>
+
+         <div class="subject clearfix convalidada">
+           <h3>Programació per a la bioinformàtica</h3>
+         </div>
+
+         <div class="subject clearfix">
+           <h3>Biologia molecular</h3>
+           <div class="subject-body">
+             <ul dir="auto">
+               <li>M0.150: <a href="https://github.com/rbuj-UOC/M0.150" target="_blank" rel="noopener noreferrer">Tasques</a></li>
+               <li>Versió personalitzada de PopG: <a href="https://github.com/rbuj-UOC/PopG" target="_blank" rel="noopener noreferrer">codi</a></li>
+             </ul>
+           </div>
+         </div>
+
+         <div class="subject clearfix">
+           <h3>Programari per a l'anàlisi de dades</h3>
+           <div class="subject-body">
+             <ul dir="auto">
+               <li>M0.153: <a href="https://github.com/rbuj-UOC/M0.153" target="_blank" rel="noopener noreferrer">LABS</a></li>
+             </ul>
+             <br>
+             <ul>
+               <li>
+                 PAC1: <a href="https://github.com/rbuj-UOC/M0.153-PAC1" target="_blank" rel="noopener noreferrer">resposta</a>
+                 <img src="img/R.svg" alt="R" title="R" class="programming-language" loading="lazy" width="16" height="16">
+               </li>
+               <li>
+                 PAC2: <a href="https://github.com/rbuj-UOC/M0.153-PAC2" target="_blank" rel="noopener noreferrer">resposta</a>
+                 <img src="img/R.svg" alt="R" title="R" class="programming-language" loading="lazy" width="16" height="16">
+               </li>
+               <li>
+                 PAC3: <a href="https://github.com/rbuj-UOC/M0.153-PAC3" target="_blank" rel="noopener noreferrer">resposta</a>
+                 <img src="img/R.svg" alt="R" title="R" class="programming-language" loading="lazy" width="16" height="16">
+               </li>
+               <li>
+                 PAC4: <a href="https://github.com/rbuj-UOC/M0.153-PAC4" target="_blank" rel="noopener noreferrer">resposta</a>
+                 <img src="img/R.svg" alt="R" title="R" class="programming-language" loading="lazy" width="16" height="16">
+               </li>
+             </ul>
+           </div>
+         </div>
+
+         <div class="subject clearfix todo-WIP">
+           <h3>Biologia estructural</h3>
+         </div>
+
+         <div class="subject clearfix todo-WIP">
+           <h3>Genòmica computacional</h3>
+         </div>
+
+        </div>
+     </div>
+   </div>
+
+   <div class="course-no-expandable">
+     <h2 id="MUCP">Màster universitari en ciberseguretat i privadesa (6 ECTS)</h2>
+     <div class="course-content">
+       <div class="dashboard">
+
+        <div class="subject clearfix">
+           <h3>Privadesa</h3>
+         </div>
+
+         <div class="subject clearfix convalidada">
+           <h3>Sistemes de gestió de la seguretat</h3>
+         </div>
+
+         <div class="subject clearfix todo-WIP">
+           <h3>Legislació i protecció de dades</h3>
+         </div>
+
+         <div class="subject clearfix todo-WIP">
+           <h3>Seguretat i pentesting de servidors de dades</h3>
+         </div>
+
+       </div>
+     </div>
+   </div>
+
+   <div class="course-no-expandable">
+     <h2>Màster universitari en enginyeria informàtica (42 ECTS)</h2>
+     <div class="course-content">
+       <div class="dashboard">
+
+         <div class="subject anivelladora">
+           <h3><a href="http://hdl.handle.net/10609/148038" target="_blank" rel="noopener noreferrer">Intel·ligència artificial</a></h3>
+         </div>
+
+         <div class="subject clearfix">
+           <h3>
+             <a href="http://hdl.handle.net/10609/14281" target="_blank" rel="noopener noreferrer">Intel·ligència artificial avançada</a>
+           </h3>
+         </div>
+
+         <div class="subject">
+           <h3>
+             <a href="http://hdl.handle.net/10609/146178" target="_blank" rel="noopener noreferrer">Sistemes de gestió de la seguretat de la informació</a>
+           </h3>
+         </div>
+
+         <div class="subject clearfix">
+          <h3>
+             <a href="http://hdl.handle.net/10609/9581" target="_blank" rel="noopener noreferrer">Tecnologia i desenvolupament en dispositius mòbils</a>
+          </h3>
+         </div>
+
+         <div class="subject">
+           <h3>
+             <a href="http://hdl.handle.net/10609/69045" target="_blank" rel="noopener noreferrer">Plataformes de publicació i distribució</a>
+           </h3>
+         </div>
+
+         <div class="subject clearfix">
+           <h3>
+             <a href="https://openaccess.uoc.edu/handle/10609/140766" target="_blank" rel="noopener noreferrer">Computació d'altes prestacions</a>
+           </h3>
+         </div>
+
+         <div class="subject clearfix">
+           <h3>
+             <a href="https://openaccess.uoc.edu/handle/10609/9583" target="_blank" rel="noopener noreferrer">Enginyeria de la usabilitat</a>
+           </h3>
+         </div>
+
+         <div class="subject clearfix convalidada">
+           <h3>
+             Visualització de dades
+           </h3>
+         </div>
+
+       </div>
+     </div>
+   </div>
+   <div class="course">
+     <h2 id="EI">Escola d'idiomes (16 ECTS)</h2>
      <div class="course-content">
        <div class="dashboard">
 
          <div class="subject clearfix">
+          <div class="programming-language-subject-container">
+            <img src="./img/uk.svg" alt="English" title="English" class="programming-language-subject" loading="lazy" width="16" height="16">
+          </div>
+           <h3>English A1.1</h3>
+           <div class="subject-body">
+             <ul>
+               <li>
+                 <ol>
+                   <li><a href="https://aprenentatge.recursos.uoc.edu/continguts/PID_00276292/index.html" target="_blank" rel="noopener noreferrer">Basics</a></li>
+                   <li><a href="https://campus.uoc.edu/continguts/PID_00264175/index.html" target="_blank" rel="noopener noreferrer">Objects and Gadgets</a></li>
+                   <li><a href="https://campus.uoc.edu/continguts/PID_00264174/index.html" target="_blank" rel="noopener noreferrer">Other People</a></li>
+                   <li><a href="https://campus.uoc.edu/continguts/PID_00264172/index.html" target="_blank" rel="noopener noreferrer">Personal profiles</a></li>
+                   <li><a href="https://aprenentatge.recursos.uoc.edu/continguts/PID_00276293/index.html" target="_blank" rel="noopener noreferrer">Where we live</a></li>
+                   <li><a href="https://aprenentatge.recursos.uoc.edu/continguts/PID_00264170/index.html" target="_blank" rel="noopener noreferrer">Work</a></li>
+                 </ol>
+               </li>
+               <li>
+                 <a href="https://materials.campus.uoc.edu/continguts/PID_00267745/index.html" target="_blank" rel="noopener noreferrer">Grammar Book A1</a>
+               </li>
+               <li>
+                 <a href="https://aprenentatge.recursos.uoc.edu/continguts/PID_00209023/web/index.html" target="_blank" rel="noopener noreferrer">Grammar</a>
+               </li>
+             </ul>
+           </div>
+         </div>
+
+         <div class="subject clearfix">
+          <div class="programming-language-subject-container">
+            <img src="./img/uk.svg" alt="English" title="English" class="programming-language-subject" loading="lazy" width="16" height="16">
+          </div>
+           <h3>English A1.2</h3>
+           <div class="subject-body">
+             <ul>
+               <li>
+                 <ol>
+                   <li><a href="https://campus.uoc.edu/continguts/PID_00264391/index.html" target="_blank" rel="noopener noreferrer">Jobs and work experience</a></li>
+                   <li><a href="https://campus.uoc.edu/continguts/PID_00264400/index.html" target="_blank" rel="noopener noreferrer">Seasons</a></li>
+                   <li><a href="https://campus.uoc.edu/continguts/PID_00264390/index.html" target="_blank" rel="noopener noreferrer">Shopping and Entertainment</a></li>
+                   <li><a href="https://campus.uoc.edu/continguts/PID_00264389/index.html" target="_blank" rel="noopener noreferrer">Travel</a></li>
+                   <li><a href="https://campus.uoc.edu/continguts/PID_00264388/index.html" target="_blank" rel="noopener noreferrer">True Stories</a></li>
+                   <li><a href="https://campus.uoc.edu/continguts/PID_00264392/index.html" target="_blank" rel="noopener noreferrer">Work and free time</a></li>
+                 </ol>
+               </li>
+               <li>
+                 <a href="https://materials.campus.uoc.edu/continguts/PID_00267745/index.html" target="_blank" rel="noopener noreferrer">Grammar Book A1</a>
+               </li>
+               <li>
+                 <a href="https://aprenentatge.recursos.uoc.edu/continguts/PID_00209023/web/index.html" target="_blank" rel="noopener noreferrer">Grammar</a>
+               </li>
+             </ul>
+           </div>
+         </div>
+
+         <div class="subject clearfix">
+          <div class="programming-language-subject-container">
+            <img src="./img/uk.svg" alt="English" title="English" class="programming-language-subject" loading="lazy" width="16" height="16">
+          </div>
+           <h3>English A2.1</h3>
+           <div class="subject-body">
+             <ul>
+               <li>
+                 <ol>
+                   <li><a href="https://campus.uoc.edu/continguts/PID_00264408/index.html" target="_blank" rel="noopener noreferrer">Being positive</a></li>
+                   <li><a href="https://aprenentatge.recursos.uoc.edu/continguts/PID_00264404/index.html" target="_blank" rel="noopener noreferrer">Food and eating</a></li>
+                   <li><a href="https://aprenentatge.recursos.uoc.edu/continguts/PID_00264406/index.html" target="_blank" rel="noopener noreferrer">Learning Languages</a></li>
+                   <li><a href="https://aprenentatge.recursos.uoc.edu/continguts/PID_00264407/index.html" target="_blank" rel="noopener noreferrer">Living with technology</a></li>
+                   <li><a href="https://aprenentatge.recursos.uoc.edu/continguts/PID_00264409/index.html" target="_blank" rel="noopener noreferrer">Money: living with less</a></li>
+                   <li><a href="https://aprenentatge.recursos.uoc.edu/continguts/PID_00264405/index.html" target="_blank" rel="noopener noreferrer">Women in the arts</a></li>
+                 </ol>
+               </li>
+               <li>
+                 <a href="https://materials.campus.uoc.edu/continguts/PID_00267755/index.html" target="_blank" rel="noopener noreferrer">Grammar Book A2</a>
+               </li>
+               <li>
+                 <a href="https://aprenentatge.recursos.uoc.edu/continguts/PID_00209023/web/index.html" target="_blank" rel="noopener noreferrer">Grammar</a>
+               </li>
+             </ul>
+           </div>
+         </div>
+
+         <div class="subject clearfix">
+          <div class="programming-language-subject-container">
+            <img src="./img/uk.svg" alt="English" title="English" class="programming-language-subject" loading="lazy" width="16" height="16">
+          </div>
+           <h3>English A2.2</h3>
+           <div class="subject-body">
+             <ul>
+               <li>
+                 <ol>
+                   <li><a href="https://aprenentatge.recursos.uoc.edu/continguts/PID_00264417/index.html" target="_blank" rel="noopener noreferrer">Student life</a></li>
+                   <li><a href="https://aprenentatge.recursos.uoc.edu/continguts/PID_00264416/index.html" target="_blank" rel="noopener noreferrer">Ways of working</a></li>
+                   <li><a href="https://aprenentatge.recursos.uoc.edu/continguts/PID_00264422/index.html" target="_blank" rel="noopener noreferrer">Sports and leisure activities</a></li>
+                   <li><a href="https://aprenentatge.recursos.uoc.edu/continguts/PID_00264421/index.html" target="_blank" rel="noopener noreferrer">Cafè culture</a></li>
+                   <li><a href="https://aprenentatge.recursos.uoc.edu/continguts/PID_00264418/index.html" target="_blank" rel="noopener noreferrer">Sleep</a></li>
+                   <li><a href="https://aprenentatge.recursos.uoc.edu/continguts/PID_00264420/index.html" target="_blank" rel="noopener noreferrer">Using digital media</a></li>
+                 </ol>
+               </li>
+               <li>
+                 <a href="https://materials.campus.uoc.edu/continguts/PID_00267755/index.html" target="_blank" rel="noopener noreferrer">Grammar Book A2</a>
+               </li>
+               <li>
+                 <a href="https://aprenentatge.recursos.uoc.edu/continguts/PID_00209023/web/index.html" target="_blank" rel="noopener noreferrer">Grammar</a>
+               </li>
+             </ul>
+           </div>
+         </div>
+
+         <div class="subject clearfix tbd">
+          <div class="programming-language-subject-container">
+            <img src="./img/uk.svg" alt="English" title="English" class="programming-language-subject" loading="lazy" width="16" height="16">
+          </div>
+           <h3>English B1.1</h3>
+           <div class="subject-body">
+             <ul>
+               <li>
+                 <ol>
+                   <li><a href="https://aprenentatge.recursos.uoc.edu/continguts/PID_00248184/index.html" target="_blank" rel="noopener noreferrer">Friends and social networks</a></li>
+                   <li><a href="https://aprenentatge.recursos.uoc.edu/continguts/PID_00248183/index.html" target="_blank" rel="noopener noreferrer">Healthy living</a></li>
+                   <li><a href="https://aprenentatge.recursos.uoc.edu/continguts/PID_00276265/index.html" target="_blank" rel="noopener noreferrer">Moviegoers</a></li>
+                   <li><a href="https://aprenentatge.recursos.uoc.edu/continguts/PID_00248185/index.html" target="_blank" rel="noopener noreferrer">The food experience</a></li>
+                   <li><a href="https://aprenentatge.recursos.uoc.edu/continguts/PID_00248179/index.html" target="_blank" rel="noopener noreferrer">The right job</a></li>
+                   <li><a href="https://aprenentatge.recursos.uoc.edu/continguts/PID_00248186/index.html" target="_blank" rel="noopener noreferrer">Traveling the globe</a></li>
+                 </ol>
+               </li>
+               <li>
+                 <a href="https://aprenentatge.recursos.uoc.edu/continguts/PID_00272533/index.html" target="_blank" rel="noopener noreferrer">English Pronunciation Module</a>
+               </li>
+               <li>
+                 <a href="https://aprenentatge.recursos.uoc.edu/continguts/PID_00209023/web/index.html" target="_blank" rel="noopener noreferrer">Grammar</a>
+               </li>
+             </ul>
+           </div>
+         </div>
+
+         <div class="subject clearfix tbd">
+          <div class="programming-language-subject-container">
+            <img src="./img/uk.svg" alt="English" title="English" class="programming-language-subject" loading="lazy" width="16" height="16">
+          </div>
+           <h3>English B1.2</h3>
+           <div class="subject-body">
+             <ul>
+               <li>
+                 <ol>
+                   <li><a href="https://aprenentatge.recursos.uoc.edu/continguts/PID_00272536/index.html" target="_blank" rel="noopener noreferrer">Crime watch</a></li>
+                   <li><a href="https://aprenentatge.recursos.uoc.edu/continguts/PID_00272532/index.html" target="_blank" rel="noopener noreferrer">House - hunting</a></li>
+                   <li><a href="https://aprenentatge.recursos.uoc.edu/continguts/PID_00272531/index.html" target="_blank" rel="noopener noreferrer">Money, money, money</a></li>
+                   <li><a href="https://aprenentatge.recursos.uoc.edu/continguts/PID_00272534/index.html" target="_blank" rel="noopener noreferrer">Technology</a></li>
+                   <li><a href="https://aprenentatge.recursos.uoc.edu/continguts/PID_00272535/index.html" target="_blank" rel="noopener noreferrer">The world of television</a></li>
+                 </ol>
+               </li>
+               <li>
+                 <a href="https://aprenentatge.recursos.uoc.edu/continguts/PID_00272533/index.html" target="_blank" rel="noopener noreferrer">English Pronunciation Module</a>
+               </li>
+               <li>
+                 <a href="https://aprenentatge.recursos.uoc.edu/continguts/PID_00209023/web/index.html" target="_blank" rel="noopener noreferrer">Grammar</a>
+               </li>
+             </ul>
+           </div>
+         </div>
+
+         <div class="subject clearfix tbd">
+          <div class="programming-language-subject-container">
+            <img src="./img/uk.svg" alt="English" title="English" class="programming-language-subject" loading="lazy" width="16" height="16">
+          </div>
+           <h3>English B2.1</h3>
+         </div>
+
+         <div class="subject clearfix tbd">
+          <div class="programming-language-subject-container">
+            <img src="./img/uk.svg" alt="English" title="English" class="programming-language-subject" loading="lazy" width="16" height="16">
+          </div>
+           <h3>English B2.2</h3>
+         </div>
+
+       </div>
+     </div>
+   </div>
+
+   <div class="course">
+     <h2 id="EP">Escola de programació (60 ECTS)</h2>
+     <div class="course-content">
+       <div class="dashboard">
+
+         <div class="subject clearfix">
+          <div class="programming-language-subject-container">
+            <img src="./img/python.svg" alt="Python" title="Python" class="programming-language-subject" loading="lazy" width="16" height="16">
+          </div>
            <h3>Python A1</h3>
            <div class="subject-body">
              <ol dir="auto">
@@ -292,6 +641,9 @@
          </div>
 
          <div class="subject clearfix">
+          <div class="programming-language-subject-container">
+            <img src="./img/python.svg" alt="Python" title="Python" class="programming-language-subject" loading="lazy" width="16" height="16">
+          </div>
            <h3>Python A2</h3>
            <div class="subject-body">
              <ol dir="auto">
@@ -311,6 +663,9 @@
          </div>
 
          <div class="subject clearfix">
+          <div class="programming-language-subject-container">
+            <img src="./img/python.svg" alt="Python" title="Python" class="programming-language-subject" loading="lazy" width="16" height="16">
+          </div>
            <h3>Python B1</h3>
            <div class="subject-body">
              <ol dir="auto">
@@ -343,6 +698,9 @@
          </div>
 
          <div class="subject clearfix">
+          <div class="programming-language-subject-container">
+            <img src="./img/python.svg" alt="Python" title="Python" class="programming-language-subject" loading="lazy" width="16" height="16">
+          </div>
            <h3>Python B2</h3>
            <div class="subject-body">
              <ol dir="auto">
@@ -366,6 +724,9 @@
          </div>
 
          <div class="subject clearfix">
+          <div class="programming-language-subject-container">
+            <img src="./img/python.svg" alt="Python" title="Python" class="programming-language-subject" loading="lazy" width="16" height="16">
+          </div>
            <h3>Python C1</h3>
            <div class="subject-body">
              <ol dir="auto">
@@ -383,77 +744,179 @@
              </ul>
              <br>
              <ul>
-               <li>Projecte final: <a href="https://github.com/rbuj-UOC/python-c1-proyecto-final" target="_blank" rel="noopener noreferrer">resposta</a></li>
+               <li>
+                  Projecte final: <a href="https://github.com/rbuj-UOC/python-c1-proyecto-final" target="_blank" rel="noopener noreferrer">resposta</a>
+                 <img src="img/flask.svg" alt="Flask" title="Flask" class="programming-language" loading="lazy" width="16" height="16">
+               </li>
              </ul>
            </div>
          </div>
 
-         <div class="subject clearfix todo-WIP">
+         <div class="subject clearfix">
+          <div class="programming-language-subject-container">
+            <img src="./img/javascript.svg" alt="JavaScript" title="JavaScript" class="programming-language-subject" loading="lazy" width="16" height="16">
+          </div>
            <h3>JavaScript A1</h3>
+           <div class="subject-body">
+             <ol dir="auto">
+               <li>Introducció</li>
+               <li>Què és el pensament computacional?</li>
+               <li>Com funciona un ordinador i què és programar?</li>
+               <li>Com es pot resoldre un problema emprant el pensament computacional per programar</li>
+               <li>Estructures de control i programa</li>
+               <li>Implementació de codi</li>
+             </ol>
+             <br>
+             <ul>
+               <li>Jupyter Notebooks: <a href="https://github.com/rbuj-UOC/edp-js" target="_blank" rel="noopener noreferrer">contenidor</a></li>
+             </ul>
+             <br>
+             <ul>
+               <li>Projecte final: <a href="https://github.com/rbuj-UOC/js-a1-projecte-final" target="_blank" rel="noopener noreferrer">resposta</a></li>
+             </ul>
+           </div>
          </div>
 
-         <div class="subject clearfix todo-WIP">
+         <div class="subject clearfix">
+          <div class="programming-language-subject-container">
+            <img src="./img/javascript.svg" alt="JavaScript" title="JavaScript" class="programming-language-subject" loading="lazy" width="16" height="16">
+          </div>
            <h3>JavaScript A2</h3>
+           <div class="subject-body">
+             <ol dir="auto">
+               <li>Començant a programar</li>
+               <li>Conceptes fonamentals de programació en JavaScript</li>
+               <li>Treballant amb dades</li>
+               <li>Organitzant el codi</li>
+               <li>Reutilitzant el codi</li>
+               <li>Tipus de dades estructurades (arrays)</li>
+               <li>Tipus de dades estructurades (objectes)</li>
+               <li>Esquemes algorísmics</li>
+             </ol>
+             <br>
+             <ul>
+               <li>Jupyter Notebooks: <a href="https://github.com/rbuj-UOC/edp-js" target="_blank" rel="noopener noreferrer">contenidor</a></li>
+             </ul>
+             <br>
+             <ul>
+               <li>Projecte final: <a href="https://github.com/rbuj-UOC/js-a2-projecte-final" target="_blank" rel="noopener noreferrer">resposta</a></li>
+             </ul>
+           </div>
          </div>
 
-         <div class="subject clearfix todo-WIP">
+         <div class="subject clearfix">
+          <div class="programming-language-subject-container">
+            <img src="./img/javascript.svg" alt="JavaScript" title="JavaScript" class="programming-language-subject" loading="lazy" width="16" height="16">
+          </div>
            <h3>JavaScript B1</h3>
+           <div class="subject-body">
+             <ol dir="auto">
+               <li>Casos específics de funcions</li>
+               <li>Classes</li>
+               <li>Primers passos en una aplicació web</li>
+               <li>Ús avançat en una aplicació web</li>
+             </ol>
+             <br>
+             <ul>
+               <li>Ex. tema 0: <a href="https://github.com/rbuj-UOC/js-b1-tema0-p" target="_blank" rel="noopener noreferrer">resposta</a></li>
+               <li>Ex. tema 1: <a href="https://github.com/rbuj-UOC/js-b1-tema1-p" target="_blank" rel="noopener noreferrer">resposta</a></li>
+               <li>Ex. tema 2: <a href="https://github.com/rbuj-UOC/js-b1-tema2-p" target="_blank" rel="noopener noreferrer">resposta</a></li>
+               <li>Ex. tema 3: <a href="https://github.com/rbuj-UOC/js-b1-tema3-p" target="_blank" rel="noopener noreferrer">resposta</a></li>
+               <li>Ex. tema 4: <a href="https://github.com/rbuj-UOC/js-b1-tema4-p" target="_blank" rel="noopener noreferrer">resposta</a></li>
+             </ul>
+             <br>
+             <ul>
+               <li>Seguiment: <a href="https://github.com/rbuj-UOC/js-b1-revision-exercises-p" target="_blank" rel="noopener noreferrer">temes 1-2</a></li>
+               <li>Seguiment: <a href="https://github.com/rbuj-UOC/js-b1-revision-exercises-T3-T4-p" target="_blank" rel="noopener noreferrer">temes 3-4</a></li>
+             </ul>
+             <br>
+             <ul>
+               <li>Jupyter Notebooks: <a href="https://github.com/rbuj-UOC/edp-js" target="_blank" rel="noopener noreferrer">contenidor</a></li>
+             </ul>
+             <br>
+             <ul>
+               <li>Projecte final: <a href="https://github.com/rbuj-UOC/js-b1-projecte-final" target="_blank" rel="noopener noreferrer">resposta</a></li>
+             </ul>
+           </div>
          </div>
 
-         <div class="subject clearfix todo-WIP">
+         <div class="subject clearfix">
+          <div class="programming-language-subject-container">
+            <img src="./img/javascript.svg" alt="JavaScript" title="JavaScript" class="programming-language-subject" loading="lazy" width="16" height="16">
+          </div>
            <h3>JavaScript B2</h3>
+           <div class="subject-body">
+             <ol dir="auto">
+               <li>Ús avançat de funcions</li>
+               <li>Treball expert amb classes</li>
+               <li>JavaScript professional en una aplicació web</li>
+               <li>Treball amb API</li>
+               <li>Tècniques per millorar l'estructura i la robustesa del codi</li>
+             </ol>
+             <br>
+             <ul>
+               <li>Ex. tema 1: <a href="https://github.com/rbuj-UOC/js-b2-tema1-p" target="_blank" rel="noopener noreferrer">resposta</a></li>
+               <li>Ex. tema 2: <a href="https://github.com/rbuj-UOC/js-b2-tema2-p" target="_blank" rel="noopener noreferrer">resposta</a></li>
+               <li>Ex. tema 3: <a href="https://github.com/rbuj-UOC/js-b2-tema3-p" target="_blank" rel="noopener noreferrer">resposta</a></li>
+               <li>Ex. tema 4: <a href="https://github.com/rbuj-UOC/js-b2-tema4-p" target="_blank" rel="noopener noreferrer">resposta</a></li>
+               <li>Ex. tema 5: <a href="https://github.com/rbuj-UOC/js-b2-tema5-p" target="_blank" rel="noopener noreferrer">resposta</a></li>
+             </ul>
+             <br>
+             <ul>
+               <li>Jupyter Notebooks: <a href="https://github.com/rbuj-UOC/edp-js" target="_blank" rel="noopener noreferrer">contenidor</a></li>
+             </ul>
+             <br>
+             <ul>
+               <li>Projecte final: <a href="https://github.com/rbuj-UOC/js-b2-projecte-final" target="_blank" rel="noopener noreferrer">resposta</a></li>
+             </ul>
+           </div>
          </div>
 
-         <div class="subject clearfix todo-WIP">
+         <div class="subject clearfix">
+          <div class="programming-language-subject-container">
+            <img src="./img/javascript.svg" alt="JavaScript" title="JavaScript" class="programming-language-subject" loading="lazy" width="16" height="16">
+          </div>
            <h3>JavaScript C1</h3>
+           <div class="subject-body">
+             <ol dir="auto">
+               <li>Fonaments i tecnologies per al desenvolupament d'aplicacions web</li>
+               <li>Eines per al desenvolupament web</li>
+               <li>Introducció a VUE</li>
+               <li>Un projecte amb VUE</li>
+             </ol>
+             <br>
+             <ul>
+               <li>Exercicis: <a href="https://github.com/rbuj-UOC/11.212" target="_blank">resposta</a></li>
+               <li>
+                  Projecte final: <a href="https://github.com/rbuj-UOC/js-c1-projecte-final" target="_blank" rel="noopener noreferrer">resposta</a>
+                 <img src="img/vue.svg" alt="Vue.js" title="Vue.js" class="programming-language" loading="lazy" width="16" height="16">
+               </li>
+             </ul>
+           </div>
          </div>
 
-         <div class="subject clearfix tbd">
-           <h3>Java A1-B1</h3>
-         </div>
-
-         <div class="subject clearfix tbd">
-           <h3>JavaScript C2</h3>
-         </div>
-
-         <div class="subject clearfix tbd">
-           <h3>Python C2</h3>
-         </div>
-
-         <div class="subject clearfix tbd">
-           <h3>R A1-A2</h3>
-         </div>
-
-       </div>
+        </div>
      </div>
    </div>
 
    <div class="course">
-     <h2>Màster universitari en enginyeria informàtica (42 ECTS)</h2>
+     <h2 id="MUDLA">Màster universitari de desenvolupament de llocs i aplicacions web (60 ECTS)</h2>
      <div class="course-content">
        <div class="dashboard">
 
          <div class="subject clearfix">
            <h3>
-             <a href="https://openaccess.uoc.edu/handle/10609/140766" target="_blank" rel="noopener noreferrer">Computació d'altes prestacions</a>
+             Disseny d'interfícies interactives
            </h3>
            <div class="subject-body">
              <ul>
                <li>
-                 PAC1: <a href="https://github.com/rbuj-UOC/M1.209/tree/main/PAC1" target="_blank" rel="noopener noreferrer">resposta</a>
-                 <img src="img/c.svg" alt="JS" title="C" class="programming-language" loading="lazy" width="16" height="16">
+                 Activitat 2: <a href="https://www.figma.com/file/7jUrlNrgLnP3WocAg2CAlD/Activitat-2-(m%C3%B2bil)?type=design&mode=design&t=0G0v9Jke0ATSJTjk-1" target="_blank" rel="noopener noreferrer">mòbil</a>, <a href="https://www.figma.com/file/IzuMqR6nFU8Z2GYD7WXDFP/Activitat-2-(escriptori)?type=design&mode=design&t=0G0v9Jke0ATSJTjk-1" target="_blank" rel="noopener noreferrer">escriptori</a>
+                 <img src="img/figma.svg" alt="Figma" title="Figma" class="programming-language" loading="lazy" width="16" height="16">
                </li>
                <li>
-                 PAC2: <a href="https://github.com/rbuj-UOC/M1.209/tree/main/PAC2" target="_blank" rel="noopener noreferrer">resposta</a>
-                 <img src="img/c.svg" alt="JS" title="C" class="programming-language" loading="lazy" width="16" height="16">
-               </li>
-               <li>
-                 PAC3: <a href="https://github.com/rbuj-UOC/M1.209/tree/main/PAC3" target="_blank" rel="noopener noreferrer">resposta</a>
-                 <img src="img/c.svg" alt="JS" title="C" class="programming-language" loading="lazy" width="16" height="16">
-               </li>
-               <li>
-                 PAC4: <a href="https://github.com/rbuj-UOC/M1.209/tree/main/PAC4" target="_blank" rel="noopener noreferrer">resposta</a>
-                 <img src="img/cpp.svg" alt="JS" title="C++" class="programming-language" loading="lazy" width="16" height="16">
+                 Activitat 3: <a href="https://www.figma.com/file/VpRJ6NJu3S7w7AqIO6yyd3/Activitat-3-(m%C3%B2bil)?type=design&mode=design&t=0G0v9Jke0ATSJTjk-1" target="_blank" rel="noopener noreferrer">mòbil</a>
+                 <img src="img/figma.svg" alt="Figma" title="Figma" class="programming-language" loading="lazy" width="16" height="16">
                </li>
              </ul>
            </div>
@@ -461,267 +924,63 @@
 
          <div class="subject clearfix">
            <h3>
-             <a href="https://openaccess.uoc.edu/handle/10609/9583" target="_blank" rel="noopener noreferrer">Enginyeria de la usabilitat</a>
-           </h3>
-         </div>
-
-         <div class="subject anivelladora">
-           <h3><a href="http://hdl.handle.net/10609/148038" target="_blank" rel="noopener noreferrer">Intel·ligència artificial</a></h3>
-         </div>
-
-         <div class="subject clearfix">
-           <h3>
-             <a href="http://hdl.handle.net/10609/14281" target="_blank" rel="noopener noreferrer">Intel·ligència artificial avançada</a>
+             HTML i CSS
            </h3>
            <div class="subject-body">
              <ul>
                <li>
-                 PAC1: <a href="https://github.com/rbuj-UOC/M1.204-PAC1" target="_blank" rel="noopener noreferrer">resposta</a>
-                 <img src="img/python.svg" alt="python" title="Python" class="programming-language" loading="lazy" width="16" height="16">
+                 PAC1: <a href="https://github.com/rbuj-UOC/M4.252-PAC1" target="_blank" rel="noopener noreferrer">enunciat</a>, <a href="https://rbuj-uoc.github.io/M4.252-PAC1" target="_blank" rel="noopener noreferrer">resposta</a>
+                 <img src="img/html.svg" alt="HTML" title="HTML" class="programming-language" loading="lazy" width="16" height="16">
+                 <img src="img/css.svg" alt="CSS" title="CSS" class="programming-language" loading="lazy" width="16" height="16">
                </li>
                <li>
-                 PAC2: <a href="https://github.com/rbuj-UOC/M1.204-PAC2" target="_blank" rel="noopener noreferrer">resposta</a>
-                 <img src="img/python.svg" alt="python" title="Python" class="programming-language" loading="lazy" width="16" height="16">
+                 PAC2: <a href="https://github.com/rbuj-UOC/M4.252-PAC2" target="_blank" rel="noopener noreferrer">enunciat</a>, <a href="https://rbuj-uoc.github.io/M4.252-PAC2" target="_blank" rel="noopener noreferrer">resposta</a>
+                 <img src="img/html.svg" alt="HTML" title="HTML" class="programming-language" loading="lazy" width="16" height="16">
+                 <img src="img/css.svg" alt="CSS" title="CSS" class="programming-language" loading="lazy" width="16" height="16">
                </li>
                <li>
-                 PAC3: <a href="https://github.com/rbuj-UOC/M1.204-PAC3" target="_blank" rel="noopener noreferrer">resposta</a>
-                 <img src="img/python.svg" alt="python" title="Python" class="programming-language" loading="lazy" width="16" height="16">
+                 PAC3: <a href="https://github.com/rbuj-UOC/M4.252-PAC3" target="_blank" rel="noopener noreferrer">enunciat</a>, <a href="https://rbuj-uoc.github.io/M4.252-PAC3" target="_blank" rel="noopener noreferrer">resposta</a>
+                 <img src="img/html.svg" alt="HTML" title="HTML" class="programming-language" loading="lazy" width="16" height="16">
+                 <img src="img/css.svg" alt="CSS" title="CSS" class="programming-language" loading="lazy" width="16" height="16">
                </li>
                <li>
-                 PAC4: <a href="https://github.com/rbuj-UOC/M1.204-PAC4" target="_blank" rel="noopener noreferrer">resposta</a>
-                 <img src="img/python.svg" alt="python" title="Python" class="programming-language" loading="lazy" width="16" height="16">
-               </li>
-               <li>
-                 Pràctica: <a href="https://github.com/rbuj-UOC/M1.204-practica" target="_blank" rel="noopener noreferrer">resposta</a>
-                 <img src="img/python.svg" alt="python" title="Python" class="programming-language" loading="lazy" width="16" height="16">
-               </li>
-             </ul>
-           </div>
-         </div>
-
-         <div class="subject">
-           <h3>
-             <a href="http://hdl.handle.net/10609/69045" target="_blank" rel="noopener noreferrer">Plataformes de publicació i distribució</a>
-           </h3>
-         </div>
-
-         <div class="subject">
-           <h3>
-             <a href="http://hdl.handle.net/10609/146178" target="_blank" rel="noopener noreferrer">Sistemes de gestió de la seguretat de la informació</a>
-           </h3>
-         </div>
-
-         <div class="subject clearfix">
-           <a href="http://hdl.handle.net/10609/9581" target="_blank" rel="noopener noreferrer">Tecnologia i desenvolupament en dispositius mòbils</a>
-         </div>
-
-         <div class="subject clearfix convalidada">
-           <h3>
-             Visualització de dades
-           </h3>
-         </div>
-
-         <div class="subject clearfix todo-Q2">
-           <h3>
-             Simulació
-           </h3>
-         </div>
-
-         <div class="subject todo-Q2">
-           <h3><a href="http://hdl.handle.net/10609/141366" target="_blank" rel="noopener noreferrer">Tècniques avançades d'enginyeria del programari</a></h3>
-         </div>
-
-         <div class="subject clearfix todo-Q2">
-           <h3>
-             Sistemes distribuïts a gran escala
-           </h3>
-         </div>
-
-         <div class="subject tbd">
-           <h3>
-             <a href="https://openaccess.uoc.edu/handle/10609/63106" target="_blank" rel="noopener noreferrer">Direcció estratègica de sistemes i tecnologies de la informació</a>
-           </h3>
-         </div>
-
-         <div class="subject clearfix tbd">
-           <h3>
-             Fonaments de ciberseguretat
-           </h3>
-         </div>
-
-         <div class="subject clearfix tbd">
-           <h3>
-             Gestió avançada de projectes TIC
-           </h3>
-         </div>
-
-         <div class="subject tbd">
-           <h3>
-             TFM
-           </h3>
-         </div>
-
-       </div>
-     </div>
-   </div>
-
-   <div class="course">
-     <h2>Escola d'idiomes (16 ECTS)</h2>
-     <div class="course-content">
-       <div class="dashboard">
-
-         <div class="subject clearfix">
-           <h3>English A1.1</h3>
-           <div class="subject-body">
-             <ul>
-               <li>
-                 <ol>
-                   <li><a href="https://aprenentatge.recursos.uoc.edu/continguts/PID_00276292/index.html" target="_blank" rel="noopener noreferrer">Basics</a></li>
-                   <li><a href="https://campus.uoc.edu/continguts/PID_00264175/index.html" target="_blank" rel="noopener noreferrer">Objects and Gadgets</a></li>
-                   <li><a href="https://campus.uoc.edu/continguts/PID_00264174/index.html" target="_blank" rel="noopener noreferrer">Other People</a></li>
-                   <li><a href="https://campus.uoc.edu/continguts/PID_00264172/index.html" target="_blank" rel="noopener noreferrer">Personal profiles</a></li>
-                   <li><a href="https://aprenentatge.recursos.uoc.edu/continguts/PID_00276293/index.html" target="_blank" rel="noopener noreferrer">Where we live</a></li>
-                   <li><a href="https://aprenentatge.recursos.uoc.edu/continguts/PID_00264170/index.html" target="_blank" rel="noopener noreferrer">Work</a></li>
-                 </ol>
-               </li>
-               <li>
-                 <a href="https://materials.campus.uoc.edu/continguts/PID_00267745/index.html" target="_blank" rel="noopener noreferrer">Grammar Book A1</a>
-               </li>
-               <li>
-                 <a href="https://aprenentatge.recursos.uoc.edu/continguts/PID_00209023/web/index.html" target="_blank" rel="noopener noreferrer">Grammar</a>
+                 <a href="https://codepen.io/collection/WvYpzN" target="_blank" rel="noopener noreferrer">Col·lecció a codepen</a>
+                 <img src="img/html.svg" alt="HTML" title="HTML" class="programming-language" loading="lazy" width="16" height="16">
+                 <img src="img/css.svg" alt="CSS" title="CSS" class="programming-language" loading="lazy" width="16" height="16">
                </li>
              </ul>
            </div>
          </div>
 
          <div class="subject clearfix">
-           <h3>English A1.2</h3>
+           <h3>
+             Programació JavaScript per a programadors
+           </h3>
            <div class="subject-body">
              <ul>
                <li>
-                 <ol>
-                   <li><a href="https://campus.uoc.edu/continguts/PID_00264391/index.html" target="_blank" rel="noopener noreferrer">Jobs and work experience</a></li>
-                   <li><a href="https://campus.uoc.edu/continguts/PID_00264400/index.html" target="_blank" rel="noopener noreferrer">Seasons</a></li>
-                   <li><a href="https://campus.uoc.edu/continguts/PID_00264390/index.html" target="_blank" rel="noopener noreferrer">Shopping and Entertainment</a></li>
-                   <li><a href="https://campus.uoc.edu/continguts/PID_00264389/index.html" target="_blank" rel="noopener noreferrer">Travel</a></li>
-                   <li><a href="https://campus.uoc.edu/continguts/PID_00264388/index.html" target="_blank" rel="noopener noreferrer">True Stories</a></li>
-                   <li><a href="https://campus.uoc.edu/continguts/PID_00264392/index.html" target="_blank" rel="noopener noreferrer">Work and free time</a></li>
-                 </ol>
+                 PAC1: <a href="https://github.com/rbuj-UOC/M4.253-PAC1" target="_blank" rel="noopener noreferrer">resposta</a>
+                 <img src="img/javascript.svg" alt="JS" title="JavaScript" class="programming-language" loading="lazy" width="16" height="16">
                </li>
                <li>
-                 <a href="https://materials.campus.uoc.edu/continguts/PID_00267745/index.html" target="_blank" rel="noopener noreferrer">Grammar Book A1</a>
+                 PAC2: <a href="https://github.com/rbuj-UOC/M4.253-PAC2" target="_blank" rel="noopener noreferrer">resposta</a>
+                 <img src="img/javascript.svg" alt="JS" title="JavaScript" class="programming-language" loading="lazy" width="16" height="16">
                </li>
                <li>
-                 <a href="https://aprenentatge.recursos.uoc.edu/continguts/PID_00209023/web/index.html" target="_blank" rel="noopener noreferrer">Grammar</a>
+                 PAC3: <a href="https://github.com/rbuj-UOC/M4.253-PAC3" target="_blank" rel="noopener noreferrer">resposta</a>
+                 <img src="img/javascript.svg" alt="JS" title="JavaScript" class="programming-language" loading="lazy" width="16" height="16">
+               </li>
+               <li>
+                 PAC4: <a href="https://github.com/rbuj-UOC/M4.253-PAC4" target="_blank" rel="noopener noreferrer">enunciat</a>, <a href="https://rbuj-uoc.github.io/M4.253-PAC4/" target="_blank" rel="noopener noreferrer">resposta</a>
+                 <img src="img/javascript.svg" alt="JS" title="JavaScript" class="programming-language" loading="lazy" width="16" height="16">
+               </li>
+               <li>
+                 <a href="https://github.com/rbuj-UOC/M4.253-exercicis" target="_blank" rel="noopener noreferrer">Exercicis temes 3 i 4</a>
+                 <img src="img/javascript.svg" alt="JS" title="JavaScript" class="programming-language" loading="lazy" width="16" height="16">
                </li>
              </ul>
            </div>
          </div>
-
-         <div class="subject clearfix">
-           <h3>English A2.1</h3>
-           <div class="subject-body">
-             <ul>
-               <li>
-                 <ol>
-                   <li><a href="https://campus.uoc.edu/continguts/PID_00264408/index.html" target="_blank" rel="noopener noreferrer">Being positive</a></li>
-                   <li><a href="https://aprenentatge.recursos.uoc.edu/continguts/PID_00264404/index.html" target="_blank" rel="noopener noreferrer">Food and eating</a></li>
-                   <li><a href="https://aprenentatge.recursos.uoc.edu/continguts/PID_00264406/index.html" target="_blank" rel="noopener noreferrer">Learning Languages</a></li>
-                   <li><a href="https://aprenentatge.recursos.uoc.edu/continguts/PID_00264407/index.html" target="_blank" rel="noopener noreferrer">Living with technology</a></li>
-                   <li><a href="https://aprenentatge.recursos.uoc.edu/continguts/PID_00264409/index.html" target="_blank" rel="noopener noreferrer">Money: living with less</a></li>
-                   <li><a href="https://aprenentatge.recursos.uoc.edu/continguts/PID_00264405/index.html" target="_blank" rel="noopener noreferrer">Women in the arts</a></li>
-                 </ol>
-               </li>
-               <li>
-                 <a href="https://materials.campus.uoc.edu/continguts/PID_00267755/index.html" target="_blank" rel="noopener noreferrer">Grammar Book A2</a>
-               </li>
-               <li>
-                 <a href="https://aprenentatge.recursos.uoc.edu/continguts/PID_00209023/web/index.html" target="_blank" rel="noopener noreferrer">Grammar</a>
-               </li>
-             </ul>
-           </div>
-         </div>
-
-         <div class="subject clearfix">
-           <h3>English A2.2</h3>
-           <div class="subject-body">
-             <ul>
-               <li>
-                 <ol>
-                   <li><a href="https://aprenentatge.recursos.uoc.edu/continguts/PID_00264417/index.html" target="_blank" rel="noopener noreferrer">Student life</a></li>
-                   <li><a href="https://aprenentatge.recursos.uoc.edu/continguts/PID_00264416/index.html" target="_blank" rel="noopener noreferrer">Ways of working</a></li>
-                   <li><a href="https://aprenentatge.recursos.uoc.edu/continguts/PID_00264422/index.html" target="_blank" rel="noopener noreferrer">Sports and leisure activities</a></li>
-                   <li><a href="https://aprenentatge.recursos.uoc.edu/continguts/PID_00264421/index.html" target="_blank" rel="noopener noreferrer">Cafè culture</a></li>
-                   <li><a href="https://aprenentatge.recursos.uoc.edu/continguts/PID_00264418/index.html" target="_blank" rel="noopener noreferrer">Sleep</a></li>
-                   <li><a href="https://aprenentatge.recursos.uoc.edu/continguts/PID_00264420/index.html" target="_blank" rel="noopener noreferrer">Using digital media</a></li>
-                 </ol>
-               </li>
-               <li>
-                 <a href="https://materials.campus.uoc.edu/continguts/PID_00267755/index.html" target="_blank" rel="noopener noreferrer">Grammar Book A2</a>
-               </li>
-               <li>
-                 <a href="https://aprenentatge.recursos.uoc.edu/continguts/PID_00209023/web/index.html" target="_blank" rel="noopener noreferrer">Grammar</a>
-               </li>
-             </ul>
-           </div>
-         </div>
-
-         <div class="subject clearfix tbd">
-
-           <h3>English B1.1</h3>
-           <div class="subject-body">
-             <ul>
-               <li>
-                 <ol>
-                   <li><a href="https://aprenentatge.recursos.uoc.edu/continguts/PID_00248184/index.html" target="_blank" rel="noopener noreferrer">Friends and social networks</a></li>
-                   <li><a href="https://aprenentatge.recursos.uoc.edu/continguts/PID_00248183/index.html" target="_blank" rel="noopener noreferrer">Healthy living</a></li>
-                   <li><a href="https://aprenentatge.recursos.uoc.edu/continguts/PID_00276265/index.html" target="_blank" rel="noopener noreferrer">Moviegoers</a></li>
-                   <li><a href="https://aprenentatge.recursos.uoc.edu/continguts/PID_00248185/index.html" target="_blank" rel="noopener noreferrer">The food experience</a></li>
-                   <li><a href="https://aprenentatge.recursos.uoc.edu/continguts/PID_00248179/index.html" target="_blank" rel="noopener noreferrer">The right job</a></li>
-                   <li><a href="https://aprenentatge.recursos.uoc.edu/continguts/PID_00248186/index.html" target="_blank" rel="noopener noreferrer">Traveling the globe</a></li>
-                 </ol>
-               </li>
-               <li>
-                 <a href="https://aprenentatge.recursos.uoc.edu/continguts/PID_00272533/index.html" target="_blank" rel="noopener noreferrer">English Pronunciation Module</a>
-               </li>
-               <li>
-                 <a href="https://aprenentatge.recursos.uoc.edu/continguts/PID_00209023/web/index.html" target="_blank" rel="noopener noreferrer">Grammar</a>
-               </li>
-             </ul>
-           </div>
-         </div>
-
-         <div class="subject clearfix tbd">
-           <h3>English B1.2</h3>
-           <div class="subject-body">
-             <ul>
-               <li>
-                 <ol>
-                   <li><a href="https://aprenentatge.recursos.uoc.edu/continguts/PID_00272536/index.html" target="_blank" rel="noopener noreferrer">Crime watch</a></li>
-                   <li><a href="https://aprenentatge.recursos.uoc.edu/continguts/PID_00272532/index.html" target="_blank" rel="noopener noreferrer">House - hunting</a></li>
-                   <li><a href="https://aprenentatge.recursos.uoc.edu/continguts/PID_00272531/index.html" target="_blank" rel="noopener noreferrer">Money, money, money</a></li>
-                   <li><a href="https://aprenentatge.recursos.uoc.edu/continguts/PID_00272534/index.html" target="_blank" rel="noopener noreferrer">Technology</a></li>
-                   <li><a href="https://aprenentatge.recursos.uoc.edu/continguts/PID_00272535/index.html" target="_blank" rel="noopener noreferrer">The world of television</a></li>
-                 </ol>
-               </li>
-               <li>
-                 <a href="https://aprenentatge.recursos.uoc.edu/continguts/PID_00272533/index.html" target="_blank" rel="noopener noreferrer">English Pronunciation Module</a>
-               </li>
-               <li>
-                 <a href="https://aprenentatge.recursos.uoc.edu/continguts/PID_00209023/web/index.html" target="_blank" rel="noopener noreferrer">Grammar</a>
-               </li>
-             </ul>
-           </div>
-         </div>
-
-       </div>
-     </div>
-   </div>
-
-   <div class="course">
-     <h2>Màster universitari en desenvolupament de llocs i aplicacions web (60 ECTS)</h2>
-     <div class="course-content">
-       <div class="dashboard">
 
          <div class="subject clearfix">
            <h3>
@@ -829,6 +1088,34 @@
 
          <div class="subject clearfix">
            <h3>
+             Eines HTML i CSS I
+           </h3>
+           <div class="subject-body">
+             <ul>
+               <li>
+                 PAC1: <a href="https://github.com/rbuj-UOC/M4.257-PAC1" target="_blank" rel="noopener noreferrer">enunciat</a>, <a href="https://rbuj-uoc.github.io/M4.257-PAC1/" target="_blank" rel="noopener noreferrer">resposta</a>
+                 <img src="img/parcel.svg" alt="Parcel" title="Parcel" class="programming-language" loading="lazy" width="16" height="16">
+                 <img src="img/html.svg" alt="HTML" title="HTML" class="programming-language" loading="lazy" width="16" height="16">
+                 <img src="img/css.svg" alt="CSS" title="CSS" class="programming-language" loading="lazy" width="16" height="16">
+               </li>
+               <li>
+                 PAC2: <a href="https://github.com/rbuj-UOC/M4.257-PAC2" target="_blank" rel="noopener noreferrer">enunciat</a>, <a href="https://rbuj-uoc.github.io/M4.257-PAC2/" target="_blank" rel="noopener noreferrer">resposta</a>
+                 <img src="img/parcel.svg" alt="Parcel" title="Parcel" class="programming-language" loading="lazy" width="16" height="16">
+                 <img src="img/html.svg" alt="HTML" title="HTML" class="programming-language" loading="lazy" width="16" height="16">
+                 <img src="img/css.svg" alt="CSS" title="CSS" class="programming-language" loading="lazy" width="16" height="16">
+               </li>
+               <li>
+                 PAC3: <a href="https://github.com/rbuj-UOC/M4.257-PAC3" target="_blank" rel="noopener noreferrer">enunciat</a>, <a href="https://rbuj-uoc.github.io/M4.257-PAC3/" target="_blank" rel="noopener noreferrer">resposta</a>
+                 <img src="img/parcel.svg" alt="Parcel" title="Parcel" class="programming-language" loading="lazy" width="16" height="16">
+                 <img src="img/html.svg" alt="HTML" title="HTML" class="programming-language" loading="lazy" width="16" height="16">
+                 <img src="img/css.svg" alt="CSS" title="CSS" class="programming-language" loading="lazy" width="16" height="16">
+               </li>
+             </ul>
+           </div>
+         </div>
+
+         <div class="subject clearfix">
+           <h3>
              Desenvolupament front-end avançat
            </h3>
            <div class="subject-body">
@@ -888,52 +1175,6 @@
 
          <div class="subject clearfix">
            <h3>
-             Disseny d'interfícies interactives
-           </h3>
-           <div class="subject-body">
-             <ul>
-               <li>
-                 Activitat 2: <a href="https://www.figma.com/file/7jUrlNrgLnP3WocAg2CAlD/Activitat-2-(m%C3%B2bil)?type=design&mode=design&t=0G0v9Jke0ATSJTjk-1" target="_blank" rel="noopener noreferrer">mòbil</a>, <a href="https://www.figma.com/file/IzuMqR6nFU8Z2GYD7WXDFP/Activitat-2-(escriptori)?type=design&mode=design&t=0G0v9Jke0ATSJTjk-1" target="_blank" rel="noopener noreferrer">escriptori</a>
-                 <img src="img/figma.svg" alt="Figma" title="Figma" class="programming-language" loading="lazy" width="16" height="16">
-               </li>
-               <li>
-                 Activitat 3: <a href="https://www.figma.com/file/VpRJ6NJu3S7w7AqIO6yyd3/Activitat-3-(m%C3%B2bil)?type=design&mode=design&t=0G0v9Jke0ATSJTjk-1" target="_blank" rel="noopener noreferrer">mòbil</a>
-                 <img src="img/figma.svg" alt="Figma" title="Figma" class="programming-language" loading="lazy" width="16" height="16">
-               </li>
-             </ul>
-           </div>
-         </div>
-
-         <div class="subject clearfix">
-           <h3>
-             Eines HTML i CSS I
-           </h3>
-           <div class="subject-body">
-             <ul>
-               <li>
-                 PAC1: <a href="https://github.com/rbuj-UOC/M4.257-PAC1" target="_blank" rel="noopener noreferrer">enunciat</a>, <a href="https://rbuj-uoc.github.io/M4.257-PAC1/" target="_blank" rel="noopener noreferrer">resposta</a>
-                 <img src="img/parcel.svg" alt="Parcel" title="Parcel" class="programming-language" loading="lazy" width="16" height="16">
-                 <img src="img/html.svg" alt="HTML" title="HTML" class="programming-language" loading="lazy" width="16" height="16">
-                 <img src="img/css.svg" alt="CSS" title="CSS" class="programming-language" loading="lazy" width="16" height="16">
-               </li>
-               <li>
-                 PAC2: <a href="https://github.com/rbuj-UOC/M4.257-PAC2" target="_blank" rel="noopener noreferrer">enunciat</a>, <a href="https://rbuj-uoc.github.io/M4.257-PAC2/" target="_blank" rel="noopener noreferrer">resposta</a>
-                 <img src="img/parcel.svg" alt="Parcel" title="Parcel" class="programming-language" loading="lazy" width="16" height="16">
-                 <img src="img/html.svg" alt="HTML" title="HTML" class="programming-language" loading="lazy" width="16" height="16">
-                 <img src="img/css.svg" alt="CSS" title="CSS" class="programming-language" loading="lazy" width="16" height="16">
-               </li>
-               <li>
-                 PAC3: <a href="https://github.com/rbuj-UOC/M4.257-PAC3" target="_blank" rel="noopener noreferrer">enunciat</a>, <a href="https://rbuj-uoc.github.io/M4.257-PAC3/" target="_blank" rel="noopener noreferrer">resposta</a>
-                 <img src="img/parcel.svg" alt="Parcel" title="Parcel" class="programming-language" loading="lazy" width="16" height="16">
-                 <img src="img/html.svg" alt="HTML" title="HTML" class="programming-language" loading="lazy" width="16" height="16">
-                 <img src="img/css.svg" alt="CSS" title="CSS" class="programming-language" loading="lazy" width="16" height="16">
-               </li>
-             </ul>
-           </div>
-         </div>
-
-         <div class="subject clearfix">
-           <h3>
              Eines HTML i CSS II
            </h3>
            <div class="subject-body">
@@ -955,66 +1196,6 @@
                  <img src="img/parcel.svg" alt="Parcel" title="Parcel" class="programming-language" loading="lazy" width="16" height="16">
                  <img src="img/html.svg" alt="HTML" title="HTML" class="programming-language" loading="lazy" width="16" height="16">
                  <img src="img/css.svg" alt="CSS" title="CSS" class="programming-language" loading="lazy" width="16" height="16">
-               </li>
-             </ul>
-           </div>
-         </div>
-
-         <div class="subject clearfix">
-           <h3>
-             HTML i CSS
-           </h3>
-           <div class="subject-body">
-             <ul>
-               <li>
-                 PAC1: <a href="https://github.com/rbuj-UOC/M4.252-PAC1" target="_blank" rel="noopener noreferrer">enunciat</a>, <a href="https://rbuj-uoc.github.io/M4.252-PAC1" target="_blank" rel="noopener noreferrer">resposta</a>
-                 <img src="img/html.svg" alt="HTML" title="HTML" class="programming-language" loading="lazy" width="16" height="16">
-                 <img src="img/css.svg" alt="CSS" title="CSS" class="programming-language" loading="lazy" width="16" height="16">
-               </li>
-               <li>
-                 PAC2: <a href="https://github.com/rbuj-UOC/M4.252-PAC2" target="_blank" rel="noopener noreferrer">enunciat</a>, <a href="https://rbuj-uoc.github.io/M4.252-PAC2" target="_blank" rel="noopener noreferrer">resposta</a>
-                 <img src="img/html.svg" alt="HTML" title="HTML" class="programming-language" loading="lazy" width="16" height="16">
-                 <img src="img/css.svg" alt="CSS" title="CSS" class="programming-language" loading="lazy" width="16" height="16">
-               </li>
-               <li>
-                 PAC3: <a href="https://github.com/rbuj-UOC/M4.252-PAC3" target="_blank" rel="noopener noreferrer">enunciat</a>, <a href="https://rbuj-uoc.github.io/M4.252-PAC3" target="_blank" rel="noopener noreferrer">resposta</a>
-                 <img src="img/html.svg" alt="HTML" title="HTML" class="programming-language" loading="lazy" width="16" height="16">
-                 <img src="img/css.svg" alt="CSS" title="CSS" class="programming-language" loading="lazy" width="16" height="16">
-               </li>
-               <li>
-                 <a href="https://codepen.io/collection/WvYpzN" target="_blank" rel="noopener noreferrer">Col·lecció a codepen</a>
-                 <img src="img/html.svg" alt="HTML" title="HTML" class="programming-language" loading="lazy" width="16" height="16">
-                 <img src="img/css.svg" alt="CSS" title="CSS" class="programming-language" loading="lazy" width="16" height="16">
-               </li>
-             </ul>
-           </div>
-         </div>
-
-         <div class="subject clearfix">
-           <h3>
-             Programació JavaScript per a programadors
-           </h3>
-           <div class="subject-body">
-             <ul>
-               <li>
-                 PAC1: <a href="https://github.com/rbuj-UOC/M4.253-PAC1" target="_blank" rel="noopener noreferrer">resposta</a>
-                 <img src="img/javascript.svg" alt="JS" title="JavaScript" class="programming-language" loading="lazy" width="16" height="16">
-               </li>
-               <li>
-                 PAC2: <a href="https://github.com/rbuj-UOC/M4.253-PAC2" target="_blank" rel="noopener noreferrer">resposta</a>
-                 <img src="img/javascript.svg" alt="JS" title="JavaScript" class="programming-language" loading="lazy" width="16" height="16">
-               </li>
-               <li>
-                 PAC3: <a href="https://github.com/rbuj-UOC/M4.253-PAC3" target="_blank" rel="noopener noreferrer">resposta</a>
-                 <img src="img/javascript.svg" alt="JS" title="JavaScript" class="programming-language" loading="lazy" width="16" height="16">
-               </li>
-               <li>
-                 PAC4: <a href="https://github.com/rbuj-UOC/M4.253-PAC4" target="_blank" rel="noopener noreferrer">enunciat</a>, <a href="https://rbuj-uoc.github.io/M4.253-PAC4/" target="_blank" rel="noopener noreferrer">resposta</a>
-                 <img src="img/javascript.svg" alt="JS" title="JavaScript" class="programming-language" loading="lazy" width="16" height="16">
-               </li>
-               <li>
-                 <a href="https://github.com/rbuj-UOC/M4.253-exercicis" target="_blank" rel="noopener noreferrer">Exercicis temes 3 i 4</a>
-                 <img src="img/javascript.svg" alt="JS" title="JavaScript" class="programming-language" loading="lazy" width="16" height="16">
                </li>
              </ul>
            </div>
@@ -1048,7 +1229,7 @@
    </div>
 
    <div class="course">
-     <h2>Màster universitari en programari lliure (45 ECTS)</h2>
+     <h2 id="MUPLL">Màster universitari en programari lliure (45 ECTS)</h2>
      <div class="course-content">
        <div class="dashboard">
 
@@ -1144,28 +1325,7 @@
    </div>
 
    <div class="course-no-expandable">
-     <h2>Màster interuniversitari en seguretat de les tecnologies de la informació i de les comunicacions (12 ECTS)</h2>
-     <div class="course-content">
-       <div class="dashboard">
-
-         <div class="subject">
-           <h3><a href="http://hdl.handle.net/10609/76245" target="_blank" rel="noopener noreferrer">Identitat digital</a></h3>
-         </div>
-
-         <div class="subject convalidada">
-           <h3>Sistemes de gestió de la seguretat</h3>
-         </div>
-
-         <div class="subject">
-           <h3><a href="http://hdl.handle.net/10609/55581" target="_blank" rel="noopener noreferrer">Vulnerabilitats de seguretat</a></h3>
-         </div>
-
-       </div>
-     </div>
-   </div>
-
-   <div class="course-no-expandable">
-     <h2>Màster en .NET (32 ECTS)</h2>
+     <h2 id="MNET">Màster en .NET (32 ECTS)</h2>
      <div class="course-content">
        <div class="dashboard">
 
@@ -1201,7 +1361,7 @@
  <footer>
    <div class="container dues-columnes">
      <div>
-       <a href="https://github.com/rbuj-UOC" target="_blank" rel="noopener noreferrer" id="copyright-year"></a>
+       <a href="https://github.com/rbuj-UOC" target="_blank" rel="noopener noreferrer" id="copyright-year"></a> | <a href="calendari.html" target="_blank" rel="noopener noreferrer">calendari</a>
      </div>
      <div class="copyright">
        <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.ca" target="_blank" rel="noopener noreferrer">CC BY-SA 4.0 DEED</a>
@@ -1209,6 +1369,28 @@
    </div>
  </footer>
 
-<script src="script/main.js" defer></script></body>
+<script>
+  // Semestres que es volen ressaltar a la gràfica de barres
+  const anysRessaltats = ['26/27-1'];
 
+  // Dades de totes les gràfiques amb les estadístiques dels màsters
+  const chartData = [
+    { title: "Màster universitari en ciències de dades", label: "MUCD", totals: 72, aprovats: 42, convalidats: 6, matriculats: 12, anivelladors: 12 },
+    { title: "Màster universitari en bioinformàtica i bioestadística", label: "MUBB", totals: 60, aprovats: 10, convalidats: 15, matriculats: 10, anivelladors: 0 },
+    { title: "Màster universitari en ciberseguretat i privadesa", label: "MUCP", totals: 60, aprovats: 6, convalidats: 6, matriculats: 12, anivelladors: 0 },
+    { title: "EdP Python", label: "Python", totals: 36, aprovats: 30, convalidats: 0, matriculats: 0, anivelladors: 0 },
+    { title: "EdP Javascript", label: "Javascript", totals: 36, aprovats: 30, convalidats: 0, matriculats: 0, anivelladors: 0 },
+    { title: "Màster universitari en enginyeria informàtica", label: "MUEI", totals: 96, aprovats: 36, convalidats: 6, matriculats: 0, anivelladors: 6 },
+    { title: "English", label: "English", totals: 48, aprovats: 16, convalidats: 0, matriculats: 0, anivelladors: 0 },
+    { title: "Màster universitari en programari lliure", label: "MUPLL", totals: 60, aprovats: 45, convalidats: 0, matriculats: 0, anivelladors: 0 }
+  ];
+
+  // Configuració de la gràfica circular de percentatge de crèdits
+  const pieChartConfig = {
+    canvasId: "graficaPercentatge",
+    title: "Distribució dels crèdits del curs 2026-2027"
+  };
+</script>
+<script src="script/main.js" defer></script>
+</body>
 </html>
