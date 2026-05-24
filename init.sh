@@ -1,8 +1,40 @@
 #!/bin/bash
 
+# Màster universitari en ciència de dades
+
 SUBJECT="Intel·ligència artificial avançada"
 if [ ! -d "${SUBJECT}" ]; then
   git clone git@github.com:rbuj-UOC/M1.204.git "${SUBJECT}"
+fi
+
+SUBJECT="Anàlisi de dades en entorns Big Data"
+mkdir -p "${SUBJECT}"
+if [ -d "${SUBJECT}" ]; then
+  cd "${SUBJECT}"
+  BASE_DIR="M2.958-"
+  for i in PAC1 PAC2 PAC3
+  do
+    DIR="${BASE_DIR}${i}"
+    if [ ! -d "${DIR}" ]; then
+      git clone git@github.com:rbuj-UOC/${DIR}.git
+    fi
+  done
+  cd ..
+fi
+
+SUBJECT="Anàlisi estadística"
+mkdir -p "${SUBJECT}"
+if [ -d "${SUBJECT}" ]; then
+  cd "${SUBJECT}"
+  BASE_DIR="M2.990-"
+  for i in PAC1 PAC2 PAC3 PAC4
+  do
+    DIR="${BASE_DIR}${i}"
+    if [ ! -d "${DIR}" ]; then
+      git clone git@github.com:rbuj-UOC/${DIR}.git
+    fi
+  done
+  cd ..
 fi
 
 SUBJECT="Aprenentatge automàtic"
@@ -13,6 +45,21 @@ fi
 SUBJECT="Bases de dades analítiques"
 if [ ! -d "${SUBJECT}" ]; then
   git clone git@github.com:rbuj-UOC/M2.988-pacs.git "${SUBJECT}"
+fi
+
+SUBJECT="Deep learning"
+mkdir -p "${SUBJECT}"
+if [ -d "${SUBJECT}" ]; then
+  cd "${SUBJECT}"
+  BASE_DIR="M2.975-"
+  for i in PAC1 PAC2 PAC3 PAC4
+  do
+    DIR="${BASE_DIR}${i}"
+    if [ ! -d "${DIR}" ]; then
+      git clone git@github.com:rbuj-UOC/${DIR}.git
+    fi
+  done
+  cd ..
 fi
 
 SUBJECT="Fonaments de programació per a la ciència de dades"
@@ -35,10 +82,23 @@ SUBJECT="Programació per a la ciència de dades (PACS)"
 mkdir -p "${SUBJECT}"
 if [ -d "${SUBJECT}" ]; then
   cd "${SUBJECT}"
-  BASE_DIR="22.403-"
   for i in pacs pac4
   do
     DIR="${BASE_DIR}${i}"
+    if [ ! -d "${DIR}" ]; then
+      git clone git@github.com:rbuj-UOC/${DIR}.git
+    fi
+  done
+  cd ..
+fi
+
+SUBJECT="Tipologia i cicle de vida de les dades"
+mkdir -p "${SUBJECT}"
+if [ -d "${SUBJECT}" ]; then
+  cd "${SUBJECT}"
+  BASE_DIR="M2.975-"
+  for DIR in data-cleaning web-scraping M2.951-PRACTICA
+  do
     if [ ! -d "${DIR}" ]; then
       git clone git@github.com:rbuj-UOC/${DIR}.git
     fi

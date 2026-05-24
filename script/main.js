@@ -1,13 +1,15 @@
 // Oculta els últims 5 elements del menú de navegació en producció
 (function(){
-  var host=window.location.hostname;
-  var isLocal=host.indexOf("localhost")===0||host.indexOf("127.0.0.1")===0;
-  if(isLocal)return;
-  var navList=document.querySelector("header nav ul");
-  if(!navList)return;
-  var items=navList.querySelectorAll("li");
-  var start=Math.max(0,items.length-5);
-  for(var i=start;i<items.length;i++){
+  const host=window.location.hostname;
+  const isLocal=host.indexOf("localhost")===0||host.indexOf("127.0.0.1")===0;
+  if (isLocal) return;
+  const navList=document.querySelector("header nav ul");
+  if (!navList) return;
+  const items=navList.querySelectorAll("li");
+  const totalItems=items.length;
+  const hiddenItems=4;
+  const start=Math.max(0,totalItems-hiddenItems);
+  for(let i=start;i<totalItems;i++){
     if(items[i])items[i].style.display="none";
   }
 })();
@@ -19,9 +21,9 @@ function myFunction(){
 
 // Generar el copyright dinàmicament
 (function(){
-  var copyrightYear=new Date().getFullYear();
-  var copyrightText='© '+copyrightYear+' Robert Buj';
-  var copyrightElement=document.getElementById('copyright-year');
+  const copyrightYear=new Date().getFullYear();
+  const copyrightText='© '+copyrightYear+' Robert Buj';
+  const copyrightElement=document.getElementById('copyright-year');
   if(copyrightElement){
     copyrightElement.textContent=copyrightText;
   }
