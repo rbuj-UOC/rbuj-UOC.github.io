@@ -18,73 +18,50 @@
 </head>
 
 <body>
- <header>
-   <nav class="container">
-     <ul id="nav"></ul>
-   </nav>
- </header>
+ <header include-html="./header.html"></header>
  <main class="container">
    <h1>Cursos de postgrau a la UOC</h1>
 
-   <canvas id="graficaCredits"></canvas>
-
-  <div class="containerLlistaClonar">
-    <div id="clonar">
-      <ul class="course-list">
-        <li>
-          <a href="#MUPLL">Màster universitari en programari lliure</a>
-        </li>
-        <li>
-          <a href="#MNET">🎓 Màster en .NET</a>
-        </li>
-      </ul>
-    </div>
-
-    <div id="percentatge">
-      <canvas id="graficaPercentatge"></canvas>
-    </div>
-  </div>
-
-   <div id="creditsChartsGrid" class="credits-charts-grid"></div>
+   <div id="dashboard"></div>
 
    <div class="course-no-expandable">
-     <h2 id="MUPLL">Màster universitari en programari lliure (0 ECTS)</h2>
+     <h2 id="MUPLL"></h2>
      <div class="course-content">
        <div class="dashboard">
 
-         <div class="subject todo-WIP">
+         <div id="M2.002" class="subject todo-WIP">
            <h3>
              <a href="http://hdl.handle.net/10609/215" target="_blank" rel="noopener noreferrer">Administració de sistemes GNU/Linux</a>
            </h3>
          </div>
 
-         <div class="subject todo-WIP">
+         <div id="M2.001" class="subject todo-WIP">
            <h3><a href="http://hdl.handle.net/10609/202" target="_blank" rel="noopener noreferrer">Introducció al programari lliure</a></h3>
          </div>
 
-         <div class="subject todo-WIP">
+         <div id="M2.005" class="subject todo-WIP">
            <h3>
              <a href="http://hdl.handle.net/10609/207" target="_blank" rel="noopener noreferrer">Xarxes obertes</a>
            </h3>
          </div>
 
-         <div class="subject todo-WIP">
+         <div id="M2.003" class="subject todo-WIP">
            <h3>
              <a href="http://hdl.handle.net/10609/61205" target="_blank" rel="noopener noreferrer">Administració avançada de sistemes GNU/Linux</a>
            </h3>
          </div>
 
-         <div class="subject todo-WIP">
+         <div id="M2.007" class="subject todo-WIP">
            <h3>
              <a href="http://hdl.handle.net/10609/201" target="_blank" rel="noopener noreferrer">Aspectes avançats de seguretat en xarxes</a>
            </h3>
          </div>
 
-         <div class="subject todo-WIP">
+         <div id="M2.004" class="subject todo-WIP">
            <h3><a href="http://hdl.handle.net/10609/205" target="_blank" rel="noopener noreferrer">Implantació de sistemes de programari lliure</a></h3>
          </div>
 
-         <div class="subject todo-WIP">
+         <div id="M2.052" class="subject todo-WIP">
            <h3>
              <a href="http://hdl.handle.net/10609/54661" target="_blank" rel="noopener noreferrer">Sistemes distribuïts en entorns de programari lliure</a>
            </h3>
@@ -94,63 +71,21 @@
      </div>
    </div>
 
-   <div class="course-no-expandable">
-     <h2 id="MNET">Màster en .NET (32 ECTS)</h2>
-     <div class="course-content">
-       <div class="dashboard">
-
-         <div class="subject">
-           <h3>
-             Desenvolupament d'aplicacions WinForms, ASP.NET i Mobile
-           </h3>
-         </div>
-
-         <div class="subject">
-           <h3>
-             Eines de desenvolupament empresarial: T.System, Sharepoint i Biztalk
-           </h3>
-         </div>
-
-         <div class="subject">
-           <h3>
-             Fonaments de Microsoft .NET Framework
-           </h3>
-         </div>
-
-         <div class="subject">
-           <h3>
-             Serveis SQL Server per a aplicacions MS .NET
-           </h3>
-         </div>
-
-       </div>
-     </div>
-   </div>
+  <div class="course-no-expandable" include-html="./done/MNET.html"></div>
 
  </main>
- <footer>
-   <div class="container dues-columnes">
-     <div>
-       <a href="https://github.com/rbuj-UOC" target="_blank" rel="noopener noreferrer" id="copyright-year"></a> | <a href="calendari.html" target="_blank" rel="noopener noreferrer">calendari</a>
-     </div>
-     <div class="copyright">
-       <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.ca" target="_blank" rel="noopener noreferrer">CC BY-SA 4.0 DEED</a>
-     </div>
-   </div>
- </footer>
+ <footer include-html="./footer.html"></footer>
 
 <script>
-  // Semestres que es volen ressaltar a la gràfica de barres
-  const anysRessaltats = ['10/11-1', '10/11-2'];
+  // Variables globals per a l'ús posterior
+  window.anysRessaltats = ['10/11-1', '10/11-2'];
 
-  // Dades de totes les gràfiques amb les estadístiques dels màsters
-  const chartData = [
-    { title: "Màster universitari en programari lliure", label: "MUPLL", totals: 60, aprovats: 0, convalidats: 0, matriculats: 35, anivelladors: 0 }
-  ];
+  window.preuMatricula = {
+    'MUPLL': 1641.9,
+    'MNET': 3200
+  };
 
-  // Configuració de la gràfica circular de percentatge de crèdits
-  const pieChartConfig = {
-    canvasId: "graficaPercentatge",
+  window.pieChartConfig = {
     title: "Distribució dels crèdits del curs 2010-2011"
   };
 </script>
