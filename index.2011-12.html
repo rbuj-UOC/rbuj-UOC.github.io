@@ -26,86 +26,58 @@
  <main class="container">
    <h1>Cursos de postgrau a la UOC</h1>
 
-   <canvas id="graficaCredits"></canvas>
-
-  <div class="containerLlistaClonar">
-    <div id="clonar">
-      <ul class="course-list">
-        <li>
-          <a href="#MUPLL">Màster universitari en programari lliure</a>
-        </li>
-        <li>
-          <a href="#MUEI">Màster universitari en enginyeria informàtica</a>
-        </li>
-        <li>
-          <a href="#MISTIC">Màster interuniversitari en seguretat de les TIC</a>
-        </li>
-        <li>
-          <a href="#EI">Escola d'idiomes</a>
-        </li>
-        <li>
-          <a href="#MNET">🎓 Màster en .NET</a>
-        </li>
-      </ul>
-    </div>
-
-    <div id="percentatge">
-      <canvas id="graficaPercentatge"></canvas>
-    </div>
-  </div>
-
-   <div id="creditsChartsGrid" class="credits-charts-grid"></div>
+   <div id="dashboard"></div>
 
    <div class="course-no-expandable">
-     <h2 id="MUPLL">Màster universitari en programari lliure (45 ECTS)</h2>
+     <h2 id="MUPLL"></h2>
      <div class="course-content">
        <div class="dashboard">
 
-         <div class="subject">
+         <div id="M2.002" class="subject">
            <h3>
              <a href="http://hdl.handle.net/10609/215" target="_blank" rel="noopener noreferrer">Administració de sistemes GNU/Linux</a>
            </h3>
          </div>
 
-         <div class="subject">
+         <div id="M2.001" class="subject">
            <h3><a href="http://hdl.handle.net/10609/202" target="_blank" rel="noopener noreferrer">Introducció al programari lliure</a></h3>
          </div>
 
-         <div class="subject">
+         <div id="M2.005" class="subject">
            <h3>
              <a href="http://hdl.handle.net/10609/207" target="_blank" rel="noopener noreferrer">Xarxes obertes</a>
            </h3>
          </div>
 
-         <div class="subject">
+         <div id="M2.003" class="subject">
            <h3>
              <a href="http://hdl.handle.net/10609/61205" target="_blank" rel="noopener noreferrer">Administració avançada de sistemes GNU/Linux</a>
            </h3>
          </div>
 
-         <div class="subject">
+         <div id="M2.007" class="subject">
            <h3>
              <a href="http://hdl.handle.net/10609/201" target="_blank" rel="noopener noreferrer">Aspectes avançats de seguretat en xarxes</a>
            </h3>
          </div>
 
-         <div class="subject">
+         <div id="M2.004" class="subject">
            <h3><a href="http://hdl.handle.net/10609/205" target="_blank" rel="noopener noreferrer">Implantació de sistemes de programari lliure</a></h3>
          </div>
 
-         <div class="subject">
+         <div id="M2.052" class="subject">
            <h3>
              <a href="http://hdl.handle.net/10609/54661" target="_blank" rel="noopener noreferrer">Sistemes distribuïts en entorns de programari lliure</a>
            </h3>
          </div>
 
-         <div class="subject todo-WIP">
+         <div id="M2.008" class="subject todo-WIP">
            <h3>
              <a href="http://hdl.handle.net/10609/199" target="_blank" rel="noopener noreferrer">Desenvolupament d'aplicacions web</a>
            </h3>
          </div>
 
-         <div class="subject todo-WIP">
+         <div id="M2.010" class="subject todo-WIP">
            <h3>
              <a href="http://hdl.handle.net/10609/192" target="_blank" rel="noopener noreferrer">Introducció al desenvolupament de programari</a>
            </h3>
@@ -116,25 +88,27 @@
    </div>
 
    <div class="course-no-expandable">
-     <h2 id="MUEI">Màster universitari en enginyeria informàtica (0 ECTS)</h2>
+     <h2 id="MUEI"></h2>
      <div class="course-content">
        <div class="dashboard">
 
-         <div class="subject todo-WIP">
+         <div id="05.582" class="subject todo-WIP">
            <h3><a href="http://hdl.handle.net/10609/148038" target="_blank" rel="noopener noreferrer">Intel·ligència artificial</a></h3>
          </div>
 
-         <div class="subject todo-WIP">
+         <div id="M1.207" class="subject todo-WIP">
            <h3>
              <a href="http://hdl.handle.net/10609/146178" target="_blank" rel="noopener noreferrer">Sistemes de gestió de la seguretat de la informació</a>
            </h3>
          </div>
 
-         <div class="subject todo-WIP">
-           <a href="http://hdl.handle.net/10609/9581" target="_blank" rel="noopener noreferrer">Tecnologia i desenvolupament en dispositius mòbils</a>
+         <div id="M1.208" class="subject todo-WIP">
+           <h3>
+             <a href="http://hdl.handle.net/10609/9581" target="_blank" rel="noopener noreferrer">Tecnologia i desenvolupament en dispositius mòbils</a>
+           </h3>
          </div>
 
-         <div class="subject todo-WIP">
+         <div id="M1.204" class="subject todo-WIP">
            <h3>
              <a href="http://hdl.handle.net/10609/14281" target="_blank" rel="noopener noreferrer">Intel·ligència artificial avançada</a>
            </h3>
@@ -145,19 +119,15 @@
    </div>
 
    <div class="course-no-expandable">
-     <h2 id="MISTIC">Màster interuniversitari en seguretat de les tecnologies de la informació i de les comunicacions (0 ECTS)</h2>
+     <h2 id="MISTIC"></h2>
      <div class="course-content">
        <div class="dashboard">
 
-         <div class="subject convalidada">
-           <h3>Sistemes de gestió de la seguretat</h3>
-         </div>
-
-         <div class="subject todo-WIP">
+         <div id="M1.702" class="subject todo-WIP">
            <h3><a href="http://hdl.handle.net/10609/76245" target="_blank" rel="noopener noreferrer">Identitat digital</a></h3>
          </div>
 
-         <div class="subject todo-WIP">
+         <div id="M1.701" class="subject todo-WIP">
            <h3><a href="http://hdl.handle.net/10609/55581" target="_blank" rel="noopener noreferrer">Vulnerabilitats de seguretat</a></h3>
          </div>
 
@@ -166,15 +136,15 @@
    </div>
 
    <div class="course-no-expandable">
-     <h2 id="EI">Escola d'idiomes (0 ECTS)</h2>
+     <h2 id="ENG"></h2>
      <div class="course-content">
        <div class="dashboard">
 
-         <div class="subject todo-WIP">
+         <div id="00.023" class="subject todo-WIP">
            <h3>English A1.1</h3>
          </div>
 
-         <div class="subject todo-WIP">
+         <div id="00.024" class="subject todo-WIP">
            <h3>English A1.2</h3>
          </div>
 
@@ -183,29 +153,29 @@
    </div>
 
    <div class="course-no-expandable">
-     <h2 id="MNET">Màster en .NET (32 ECTS)</h2>
+     <h2 id="MNET"></h2>
      <div class="course-content">
        <div class="dashboard">
 
-         <div class="subject">
+         <div id="NET.001" class="subject">
            <h3>
              Desenvolupament d'aplicacions WinForms, ASP.NET i Mobile
            </h3>
          </div>
 
-         <div class="subject">
+         <div id="NET.002" class="subject">
            <h3>
              Eines de desenvolupament empresarial: T.System, Sharepoint i Biztalk
            </h3>
          </div>
 
-         <div class="subject">
+         <div id="NET.003" class="subject">
            <h3>
              Fonaments de Microsoft .NET Framework
            </h3>
          </div>
 
-         <div class="subject">
+         <div id="NET.004" class="subject">
            <h3>
              Serveis SQL Server per a aplicacions MS .NET
            </h3>
@@ -233,17 +203,15 @@
 
   // Dades de totes les gràfiques amb les estadístiques dels màsters
   const chartData = [
-    { title: "Màster universitari en programari lliure", label: "MUPLL", totals: 60, aprovats: 35, convalidats: 0, matriculats: 10, anivelladors: 0 },
-    { title: "Màster universitari en enginyeria informàtica", label: "MUEI", totals: 84, aprovats: 0, convalidats: 0, matriculats: 24, anivelladors: 0 },
-    { title: "Màster interuniversitari en seguretat de les TIC", label: "MISTIC", totals: 60, aprovats: 0, convalidats: 6, matriculats: 12, anivelladors: 0 },
-    { title: "English", label: "English", totals: 48, aprovats: 0, convalidats: 0, matriculats: 8, anivelladors: 0 }
+    { title: "Màster universitari en programari lliure", label: "MUPLL", totals: 60 },
+    { title: "Màster universitari en enginyeria informàtica", label: "MUEI", totals: 84 },
+    { title: "Màster interuniversitari en seguretat de les TIC", label: "MISTIC", totals: 60 },
+    { title: "Escola d'idiomes: English", label: "ENG", totals: 48 },
+    { title: "Màster en .NET", label: "MNET", totals: 32 }
   ];
 
   // Configuració de la gràfica circular de percentatge de crèdits
   const pieChartConfig = {
-    canvasId: "graficaPercentatge",
-    labels: ["MUPLL", "ENG", "MUEI"],
-    data: [10, 8, 24],
     title: "Distribució dels crèdits del curs 2011-2012"
   };
 </script>
