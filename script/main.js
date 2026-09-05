@@ -1,3 +1,19 @@
+// Dades de totes les gràfiques amb les estadístiques dels màsters
+const courses = [
+  { title: "Escola d'idiomes: English", label: "ENG", totals: 48 },
+  { title: "Escola de programació: Python", label: "Python", totals: 36 },
+  { title: "Escola de programació: JavaScript", label: "JavaScript", totals: 36 },
+  { title: "Màster en .NET", label: "MNET", totals: 32 },
+  { title: "Màster interuniversitari en seguretat de les TIC", label: "MISTIC", totals: 60 },
+  { title: "Màster universitari en bioinformàtica i bioestadística", label: "MUBB", totals: 60 },
+  { title: "Màster universitari en ciberseguretat i privadesa", label: "MUCP", totals: 60 },
+  { title: "Màster universitari en ciències de dades", label: "MUCD", totals: 72 },
+  { title: "Màster universitari en desenvolupament de llocs i aplicacions web", label: "MUDLAW", totals: 60 },
+  { title: "Màster universitari en enginyeria informàtica", label: "MUEI", totals: 80 },
+  { title: "Màster universitari en enginyeria informàtica", label: "MUEI-24", totals: 96 },
+  { title: "Màster universitari en programari lliure", label: "MUPLL", totals: 60 }
+];
+
 const subjects = [
   /* MNET */
   { id: "NET.001", name: "Desenvolupament d'aplicacions WinForms, ASP.NET i Mobile", credits: 8 },
@@ -162,7 +178,7 @@ function myFunction() {
     return total;
   };
 
-  chartData.forEach(course => {
+  courses.forEach(course => {
     const h2Element = document.getElementById(course.label);
     const courseContainer = h2Element ? h2Element.closest('.course-no-expandable, .course') : null;
 
@@ -190,11 +206,11 @@ function myFunction() {
 
 // Mostrar els crèdits ECTS aprovats al final del títol de cada màster
 (function () {
-  chartData.forEach(item => {
-    const container = document.getElementById(item.label);
+  courses.forEach(course => {
+    const container = document.getElementById(course.label);
     if (container) {
       const credits = document.createElement("span");
-      credits.textContent = `${item.title} (${item.aprovats} ECTS)`;
+      credits.textContent = `${course.title} (${course.aprovats} ECTS)`;
       // container.textContent = "";
       container.appendChild(credits);
     }
@@ -361,11 +377,11 @@ function plotGraficaPercentatge() {
   if (pieChartCanvas) {
     pieChartCanvas.style.display = "block";
     pieChartCanvas.style.margin = "0";
-    const pieLabels = chartData
+    const pieLabels = courses
       .filter(item => item.matriculats > 0)
       .map(item => item.label);
 
-    const pieValues = chartData
+    const pieValues = courses
       .filter(item => item.matriculats > 0)
       .map(item => item.matriculats);
 
@@ -419,9 +435,14 @@ function plotGraficaPercentatge() {
 function plotCreditsChartsGrid() {
   const container = document.getElementById("creditsChartsGrid");
 
-  chartData.forEach((item, index) => {
+  courses.forEach((course, index) => {
+    // si no existeix el contenidor, no fem res
+    if (!document.getElementById(course.label)) {
+      return;
+    }
+
     // Si l'element estat completat, no el mostrem
-    if (item.completat) {
+    if (course.completat) {
       return;
     }
 
@@ -432,7 +453,7 @@ function plotCreditsChartsGrid() {
     // Títol
     const title = document.createElement("div");
     title.className = "chart-title";
-    title.textContent = item.title;
+    title.textContent = course.title;
     box.appendChild(title);
 
     // Canvas
@@ -443,7 +464,7 @@ function plotCreditsChartsGrid() {
     container.appendChild(box);
 
     // Calculem els crèdits restants (assegura que no sigui inferior a 0)
-    const restants = Math.max(0, item.totals - (item.aprovats + item.anivelladors + item.convalidats + item.matriculats));
+    const restants = Math.max(0, course.totals - (course.aprovats + course.anivelladors + course.convalidats + course.matriculats));
 
     // Crear gràfica Chart.js
     new Chart(canvas, {
@@ -451,7 +472,7 @@ function plotCreditsChartsGrid() {
       data: {
         labels: ["Crèdits anivelladors", "Crèdits aprovats", "Crèdits convalidats", "Crèdits matriculats", "Crèdits restants"],
         datasets: [{
-          data: [item.anivelladors, item.aprovats, item.convalidats, item.matriculats, restants],
+          data: [course.anivelladors, course.aprovats, course.convalidats, course.matriculats, restants],
           backgroundColor: [eightColor, sixColor, quinaryColor, ternaryColor, sevenColor],
           borderColor: quaternaryColor,
           borderWidth: 2
@@ -497,7 +518,12 @@ if (dashboard) {
   const ul = document.createElement("ul");
   ul.classList.add("course-list");
 
-  chartData.forEach(course => {
+  courses.forEach(course => {
+    // si no existeix el contenidor, no fem res
+    if (!document.getElementById(course.label)) {
+      return;
+    }
+
     const li = document.createElement("li");
     const a = document.createElement("a");
 
