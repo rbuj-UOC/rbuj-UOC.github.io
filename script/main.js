@@ -336,6 +336,33 @@ function plotGraficaCredits() {
     },
     options: {
       responsive: true,
+      onClick: (evt, elements) => {
+        if (elements.length > 0) {
+          const urls = [
+            "index.2010-11.html",
+            "index.2010-11.html",
+            "index.2011-12.html",
+            "index.2011-12.html",
+            "index.2013-14.html",
+            "index.2023-24.html",
+            "index.2023-24.html",
+            "index.2024-25.html",
+            "index.2024-25.html",
+            "index.2025-26.html",
+            "index.2025-26.html",
+            "index.html",
+            "index.2026-27.Q2.html",
+            "index.2027-28.Q1.html",
+            "index.2027-28.Q2.html",
+            "index.2028-29.Q1.html",
+            "index.2028-29.Q2.html",
+            "index.2029-30.html",
+            "index.2029-30.html"
+          ];
+          const index = elements[0].index;
+          window.location.href = urls[index];
+        }
+      },
       plugins: {
         intervalsBackground: {
           intervals: [
