@@ -143,10 +143,6 @@ const subjects = [
     { href: "index.2023-24.html", label: "2023/24" },
     { href: "index.2024-25.html", label: "2024/25" },
     { href: "index.2025-26.html", label: "2025/26" },
-    { href: "index.2026-27.html", label: "2026/27" },
-    { href: "index.2027-28.html", label: "2027/28" },
-    { href: "index.2028-29.html", label: "2028/29" },
-    { href: "index.2029-30.html", label: "2029/30" },
     { href: "index.html", label: "2026-1" },
     { href: "index.2026-27.Q2.html", label: "2026-2" },
     { href: "index.2027-28.Q1.html", label: "2027-1" },
@@ -265,11 +261,10 @@ function plotGraficaCredits() {
   const labels = ['10/11-1', '10/11-2', '11/12-1', '11/12-2', '13/14-1',
     '23/24-1', '23/24-2', '24/25-1', '24/25-2',
     '25/26-1', '25/26-2', '26/27-1', '26/27-2',
-    '27/28-1', '27/28-2', '28/29-1', '28/29-2',
-    '29/30-1', '29/30-2'
+    '27/28-1', '27/28-2', '28/29-1', '28/29-2'
   ];
 
-  const data = [15, 20, 32, 22, 4, 18, 28, 24, 24, 30, 34, 34, 34, 27, 30, 36, 36, 24, 12];
+  const data = [15, 20, 32, 22, 4, 18, 28, 24, 24, 30, 34, 34, 34, 27, 30, 36, 36];
 
   // Convertir anys a índexs
   const idxs = anysRessaltats.map(any => labels.indexOf(any));
@@ -355,9 +350,7 @@ function plotGraficaCredits() {
             "index.2027-28.Q1.html",
             "index.2027-28.Q2.html",
             "index.2028-29.Q1.html",
-            "index.2028-29.Q2.html",
-            "index.2029-30.html",
-            "index.2029-30.html"
+            "index.2028-29.Q2.html"
           ];
           const index = elements[0].index;
           window.location.href = urls[index];
