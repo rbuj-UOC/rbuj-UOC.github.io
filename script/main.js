@@ -1,17 +1,18 @@
 // Dades de totes les gràfiques amb les estadístiques dels màsters
 const courses = [
-  { title: "Escola d'idiomes: English", label: "ENG", totals: 48 },
-  { title: "Escola de programació: Python", label: "Python", totals: 36 },
-  { title: "Escola de programació: JavaScript", label: "JavaScript", totals: 36 },
-  { title: "Màster en .NET", label: "MNET", totals: 32 },
-  { title: "Màster interuniversitari en seguretat de les TIC", label: "MISTIC", totals: 60 },
-  { title: "Màster universitari en bioinformàtica i bioestadística", label: "MUBB", totals: 60 },
-  { title: "Màster universitari en ciberseguretat i privadesa", label: "MUCP", totals: 60 },
-  { title: "Màster universitari en ciències de dades", label: "MUCD", totals: 72 },
-  { title: "Màster universitari en desenvolupament de llocs i aplicacions web", label: "MUDLAW", totals: 60 },
-  { title: "Màster universitari en enginyeria informàtica", label: "MUEI", totals: 80 },
-  { title: "Màster universitari en enginyeria informàtica", label: "MUEI-24", totals: 96 },
-  { title: "Màster universitari en programari lliure", label: "MUPLL", totals: 60 }
+  { title: "Escola d'idiomes: English", label: "ENG", totals: 48, preu: 1205.91 },
+  { title: "Escola de programació: Python", label: "Python", totals: 36, preu: 371 },
+  { title: "Escola de programació: JavaScript", label: "JavaScript", totals: 36, preu: 371 },
+  { title: "Màster en .NET", label: "MNET", totals: 32, preu: 3200 },
+  { title: "Màster interuniversitari en seguretat de les TIC", label: "MISTIC", totals: 60, preu: 624.85 },
+  { title: "Màster universitari en analisi i visualització de dades aplicades", label: "MUVDA", totals: 60, preu: 0 },
+  { title: "Màster universitari en bioinformàtica i bioestadística", label: "MUBB", totals: 60, preu: 3722.34 },
+  { title: "Màster universitari en ciberseguretat i privadesa", label: "MUCP", totals: 60, preu: 3895.06 },
+  { title: "Màster universitari en ciències de dades", label: "MUCD", totals: 72, preu: 4213.20 },
+  { title: "Màster universitari en desenvolupament de llocs i aplicacions web", label: "MUDLAW", totals: 60, preu: 4575.17 },
+  { title: "Màster universitari en enginyeria informàtica", label: "MUEI", totals: 80, preu: 2945.41 },
+  { title: "Màster universitari en enginyeria informàtica", label: "MUEI-24", totals: 96, preu: 5318.25 },
+  { title: "Màster universitari en programari lliure", label: "MUPLL", totals: 60, preu: 3695.38 }
 ];
 
 const subjects = [
@@ -111,7 +112,17 @@ const subjects = [
   { id: "M1.711", name: "Anàlisi forense", credits: 6 },
   { id: "M1.770", name: "Fonaments de ciberseguretat", credits: 6 },
   { id: "M1.777", name: "Seguretat en cloud computing", credits: 6 },
-  { id: "M1.779", name: "Treball de fi de màster", credits: 12 }
+  { id: "M1.779", name: "Treball de fi de màster", credits: 12 },
+  /* MUVDA */
+  { id: "MUVDA-01", name: "Anàlisi estadística multivariant i inferència estadística", credits: 6 },
+  { id: "MUVDA-02", name: "Modelització, predicció i optimització en aprenentatge automàtic", credits: 6 },
+  { id: "MUVDA-03", name: "Preguntes analítiques, dades, coneixement i IA", credits: 6 },
+  { id: "MUVDA-04", name: "Visualització de dades", credits: 6 },
+  { id: "MUVDA-05", name: "TBD 1", credits: 6 },
+  { id: "MUVDA-06", name: "TBD 2", credits: 6 },
+  { id: "MUVDA-07", name: "TBD 3", credits: 6 },
+  { id: "MUVDA-08", name: "TBD 4", credits: 6 },
+  { id: "MUVDA-09", name: "Treball de fi de màster", credits: 12 },
 ];
 
 // -----------------
@@ -258,7 +269,7 @@ function plotGraficaCredits() {
     '29/30-1', '29/30-2'
   ];
 
-  const data = [15, 20, 32, 22, 4, 18, 28, 24, 24, 30, 34, 34, 34, 27, 30, 30, 30, 30, 30];
+  const data = [15, 20, 32, 22, 4, 18, 28, 24, 24, 30, 34, 34, 34, 27, 30, 36, 36, 24, 12];
 
   // Convertir anys a índexs
   const idxs = anysRessaltats.map(any => labels.indexOf(any));
@@ -515,32 +526,91 @@ if (dashboard) {
   const clonar = document.createElement("div");
   clonar.id = "clonar";
 
-  const ul = document.createElement("ul");
-  ul.classList.add("course-list");
+  // Crear la taula
+  const table = document.createElement("table");
+  table.classList.add("course-table");
+
+  // Crear capçalera
+  const thead = document.createElement("thead");
+  const headerRow = document.createElement("tr");
+
+  ["Nom", "Crèdits", "Preu (€)"].forEach(text => {
+    const th = document.createElement("th");
+    th.textContent = text;
+    headerRow.appendChild(th);
+  });
+
+  thead.appendChild(headerRow);
+  table.appendChild(thead);
+  // afegir la classe course-list a la taula
+  table.classList.add("course-list");
+
+  // Cos de la taula
+  const tbody = document.createElement("tbody");
+
+  let totalCredits = 0;
+  let totalPreu = 0;
 
   courses.forEach(course => {
-    // si no existeix el contenidor, no fem res
     if (!document.getElementById(course.label)) {
       return;
     }
 
-    const li = document.createElement("li");
-    const a = document.createElement("a");
-
-    a.href = `#${course.label}`;
-
-    // Afegir un indicador visual si el curs està completat
-    if (course.completat === true) {
-      a.textContent = `🎓 ${course.title}`;
-    } else {
-      a.textContent = course.title;
+    const tr = document.createElement("tr");
+    if (course.matriculats > 0) {
+      tr.classList.add("matriculat");
     }
 
-    li.appendChild(a);
-    ul.appendChild(li);
+    // Nom del curs
+    const tdNom = document.createElement("td");
+    const a = document.createElement("a");
+    a.href = `#${course.label}`;
+    a.textContent = course.completat ? `🎓 ${course.title}` : course.title;
+    tdNom.appendChild(a);
+
+    // Crèdits
+    const tdCredits = document.createElement("td");
+    tdCredits.textContent = course.aprovats + course.convalidats + course.anivelladors + course.matriculats;
+
+    // Preu
+    const tdPreu = document.createElement("td");
+    tdPreu.textContent = new Intl.NumberFormat('es-ES', { style: 'currency', currency: 'EUR', minimumFractionDigits: 2, maximumFractionDigits: 2, useGrouping: true }).format(preuMatricula[course.label] || 0);
+
+    // Sumar totals
+    totalCredits += course.aprovats + course.convalidats + course.anivelladors + course.matriculats;
+    totalPreu += preuMatricula[course.label] || 0;
+
+    tr.appendChild(tdNom);
+    tr.appendChild(tdCredits);
+    tr.appendChild(tdPreu);
+
+    tbody.appendChild(tr);
   });
 
-  clonar.appendChild(ul);
+  table.appendChild(tbody);
+
+  // Fila final de totals
+  const tfoot = document.createElement("tfoot");
+  const totalRow = document.createElement("tr");
+
+  const tdTotalText = document.createElement("td");
+  tdTotalText.textContent = "TOTAL";
+
+  const tdTotalCredits = document.createElement("td");
+  tdTotalCredits.textContent = totalCredits;
+
+  const tdTotalPreu = document.createElement("td");
+  tdTotalPreu.textContent = new Intl.NumberFormat('es-ES', { style: 'currency', currency: 'EUR', minimumFractionDigits: 2, maximumFractionDigits: 2, useGrouping: true }).format(totalPreu);
+
+  totalRow.appendChild(tdTotalText);
+  totalRow.appendChild(tdTotalCredits);
+  totalRow.appendChild(tdTotalPreu);
+
+  tfoot.appendChild(totalRow);
+  table.appendChild(tfoot);
+
+  // Afegir al contenidor
+  clonar.appendChild(table);
   containerLlistaClonar.appendChild(clonar);
 
   // 2.2) <div id="percentatge"> + canvas

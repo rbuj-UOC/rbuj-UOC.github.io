@@ -28,6 +28,51 @@
 
    <div id="dashboard"></div>
 
+    <div class="course">
+     <h2 id="MUVDA"></h2>
+     <div class="course-content">
+       <div class="dashboard">
+
+         <div id="MUVDA-01" class="subject convalidada">
+           <h3>Anàlisi estadística multivariant i inferència estadística</h3>
+         </div>
+
+         <div id="MUVDA-02" class="subject convalidada">
+           <h3>Modelització, predicció i optimització en aprenentatge automàtic</h3>
+         </div>
+
+         <div id="MUVDA-03" class="subject convalidada">
+           <h3>Preguntes analítiques, dades, coneixement i IA</h3>
+         </div>
+
+         <div id="MUVDA-04" class="subject convalidada">
+           <h3>Visualització de dades</h3>
+         </div>
+
+         <div id="MUVDA-05" class="subject">
+           <h3>Anàlisi de xarxes socials i comunitats</h3>
+         </div>
+
+         <div id="MUVDA-06" class="subject">
+           <h3>Anàlisi de textos</h3>
+         </div>
+
+         <div id="MUVDA-07" class="subject">
+           <h3>Disseny de la investigació i models d'anàlisi</h3>
+         </div>
+
+         <div id="MUVDA-08" class="subject">
+           <h3>Instruments qualitatius d'anàlisi i presentació de dades</h3>
+         </div>
+
+         <div id="MUVDA-09" class="subject">
+           <h3>TFM</h3>
+         </div>
+
+        </div>
+     </div>
+    </div>
+
    <div class="course-no-expandable">
      <h2 id="MUEI-24"></h2>
      <div class="course-content">
@@ -525,6 +570,21 @@
 <script>
   // Semestres que es volen ressaltar a la gràfica de barres
   const anysRessaltats = ['29/30-1', '29/30-2'];
+
+  // Preu matrícula
+  const preuMatricula = {
+    'ENG': 1205.91,
+    'JavaScript': 371,
+    'MISTIC': 624.85,
+    'MNET': 3200,
+    'MUBB': 3722.24,
+    'MUCD': 4431.35,
+    'MUCP': 3895.06,
+    'MUDLAW': 4575.17,
+    'MUEI-24': 5318.25,
+    'MUPLL': 3695.85,
+    'Python': 371
+  };
 
   // Configuració de la gràfica circular de percentatge de crèdits
   const pieChartConfig = {

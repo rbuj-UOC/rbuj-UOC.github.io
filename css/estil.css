@@ -73,13 +73,35 @@ a:hover {
   color: var(--color-terciari);
 }
 
-ul.course-list {
+table.course-list {
   list-style-type: none;
   padding-left: 0;
   margin-bottom: 16px;
   font-family: 'Lora', serif;
   font-weight: 300;
   margin-bottom: 32px;
+
+  /* la primera columna està alineada a l'esquerra */
+  text-align: left;
+
+  /* la segona columna està alineada al centre */
+  th:nth-child(2),
+  td:nth-child(2) {
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+  }
+
+  /* la tercera columna està alineada a la dreta */
+  th:nth-child(3),
+  td:nth-child(3) {
+    text-align: right;
+    font-family: 'Courier New', Courier, monospace;
+  }
+
+  /* les files parells tenen un fons més clar */
+  tr:nth-child(even) {
+    background-color: color-mix(in srgb, var(--color-secundari) 90%, white);
+  }
 
   a:link,
   a:visited,
@@ -480,4 +502,8 @@ nav li {
 .chart-box canvas {
   max-width: 200px;
   max-height: 200px;
+}
+
+.matriculat {
+  color: var(--color-quaternari);
 }
