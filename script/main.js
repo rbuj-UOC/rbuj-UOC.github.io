@@ -562,8 +562,6 @@ if (dashboard) {
 
   thead.appendChild(headerRow);
   table.appendChild(thead);
-  // afegir la classe course-list a la taula
-  table.classList.add("course-list");
 
   // Cos de la taula
   const tbody = document.createElement("tbody");

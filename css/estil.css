@@ -57,9 +57,22 @@ footer {
 }
 
 main {
-  margin-bottom: 58px;
-  margin-top: 78px;
+  margin: 0;
   flex: 1;
+}
+
+main ul {
+  font-weight: 300;
+  list-style-type: none;
+}
+
+main ol {
+  font-weight: 300;
+  list-style-position: inside;
+}
+
+main li:not(:last-child) {
+  margin-bottom: 2px;
 }
 
 a:link,
@@ -73,13 +86,13 @@ a:hover {
   color: var(--color-terciari);
 }
 
-table.course-list {
-  list-style-type: none;
-  padding-left: 0;
-  margin-bottom: 16px;
+table.course-table {
   font-family: 'Lora', serif;
-  font-weight: 300;
-  margin-bottom: 32px;
+  font-size: medium;
+
+  td {
+    padding: 4px;
+  }
 
   /* la primera columna està alineada a l'esquerra */
   text-align: left;
@@ -106,9 +119,9 @@ table.course-list {
   a:link,
   a:visited,
   a:active {
+    font-size: medium;
     text-decoration: none;
     color: var(--color-quaternari);
-    font-size: large;
   }
 
   a:hover {
@@ -117,8 +130,8 @@ table.course-list {
 }
 
 .container {
-  margin-left: 32px;
-  margin-right: 32px;
+  margin-left: 16px;
+  margin-right: 16px;
   padding-left: 0;
   padding-right: 0;
 }
@@ -326,9 +339,9 @@ h3 {
 
 h1 {
   color: var(--color-quaternari);
-  font-size: xxx-large;
+  font-size: xx-large;
   font-weight: 300;
-  margin: 24px 0;
+  margin: 8px 0;
   text-shadow: 1px 2px 3px var(--color-principal);
 }
 
@@ -381,18 +394,12 @@ h3 {
   font-size: medium;
 }
 
-main ul {
-  font-weight: 300;
-  list-style-type: none;
+header {
+  display: none;
 }
 
-main ol {
-  font-weight: 300;
-  list-style-position: inside;
-}
-
-main li:not(:last-child) {
-  margin-bottom: 2px;
+footer {
+  display: none;
 }
 
 nav li {
@@ -400,13 +407,19 @@ nav li {
 }
 
 @media screen and (min-width: 780px) {
+  .container {
+    margin-left: 32px;
+    margin-right: 32px;
+  }
+
   .dashboard {
     grid-template-columns: 1fr 1fr;
     column-gap: 16px;
   }
 
-  main {
-    margin-top: 58px;
+  h1 {
+    font-size: xxx-large;
+    margin: 24px 0;
   }
 }
 
@@ -421,6 +434,37 @@ nav li {
 
   .dashboard {
     grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  header {
+    display: block;
+  }
+
+  h1 {
+    margin: 0 0 24px 0;
+  }
+
+  footer {
+    display: block;
+  }
+
+  main {
+    margin-bottom: 58px;
+    margin-top: 78px;
+  }
+
+  table.course-table {
+    font-size: large;
+
+    a:link,
+    a:visited,
+    a:active {
+      font-size: large;
+    }
+
+    td {
+      padding: 2px;
+    }
   }
 }
 
@@ -463,11 +507,16 @@ nav li {
   grid-template-columns: auto auto;
   justify-content: space-between;
   box-sizing: border-box;
+  gap: 16px;
+  margin-top: 16px;
+  margin-bottom: 16px;
 }
 
-#clonar {
-  margin-top: 40px;
-  margin-bottom: 10px;
+#percentatge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
 }
 
 .credits-charts-grid {
