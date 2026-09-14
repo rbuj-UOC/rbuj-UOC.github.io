@@ -19,29 +19,29 @@
 
 <body>
  <header include-html="./header.html"></header>
- <main class="container">
+ <main class="layout__container">
    <h1>Cursos de postgrau a la UOC</h1>
 
    <div id="dashboard"></div>
 
    <div class="course">
      <h2 id="MUEI"></h2>
-     <div class="course-content">
+     <div class="course__content">
        <div class="dashboard">
 
-         <div id="05.582" class="subject anivelladora" include-html="./done/05.582.html"></div>
+         <div id="05.582" class="subject subject--level" include-html="./done/05.582.html"></div>
          <div id="M1.207" class="subject" include-html="./done/M1.207.html"></div>
          <div id="M1.208" class="subject" include-html="./done/M1.208.html"></div>
          <div id="M1.204" class="subject" include-html="./done/M1.204.html"></div>
          <div id="M1.306" class="subject" include-html="./done/M1.306.html"></div>
 
-         <div id="M1.209" class="subject todo-WIP">
+         <div id="M1.209" class="subject subject--wip">
            <h3>
              <a href="https://openaccess.uoc.edu/handle/10609/140766" target="_blank" rel="noopener noreferrer">Computació d'altes prestacions</a>
            </h3>
          </div>
 
-         <div id="M1.202" class="subject todo-WIP">
+         <div id="M1.202" class="subject subject--wip">
            <h3>
              <a href="https://openaccess.uoc.edu/handle/10609/9583" target="_blank" rel="noopener noreferrer">Enginyeria de la usabilitat</a>
            </h3>
@@ -53,7 +53,7 @@
 
    <div class="course">
      <h2 id="MUDLAW"></h2>
-     <div class="course-content">
+     <div class="course__content">
        <div class="dashboard">
 
          <div id="M1.909" class="subject" include-html="./done/M1.909.html"></div>
@@ -63,19 +63,19 @@
          <div id="M4.254" class="subject" include-html="./done/M4.254.html"></div>
          <div id="M4.257" class="subject" include-html="./done/M4.257.html"></div>
 
-         <div id="M4.256" class="subject todo-WIP">
+         <div id="M4.256" class="subject subject--wip">
            <h3>
              Desenvolupament front-end avançat
            </h3>
          </div>
 
-         <div id="M4.258" class="subject todo-WIP">
+         <div id="M4.258" class="subject subject--wip">
            <h3>
              Eines HTML i CSS II
            </h3>
          </div>
 
-         <div id="M4.259" class="subject todo-WIP">
+         <div id="M4.259" class="subject subject--wip">
            <h3>
              TFM
            </h3>
@@ -85,20 +85,20 @@
      </div>
    </div>
 
-   <div class="course-no-expandable">
+   <div class="course course--static">
      <h2 id="MUCD"></h2>
-     <div class="course-content">
+     <div class="course__content">
        <div class="dashboard">
 
-         <div id="M2.991" class="subject convalidada">
+         <div id="M2.991" class="subject subject--validated">
            <h3>Aprenentatge automàtic</h3>
          </div>
 
-         <div id="M2.888" class="subject todo-WIP">
+         <div id="M2.888" class="subject subject--wip">
            <h3>Bases de dades analítiques</h3>
          </div>
 
-         <div id="M2.503" class="subject todo-WIP">
+         <div id="M2.503" class="subject subject--wip">
            <h3><a href="https://github.com/rbuj-UOC/python_datascience/" target="_blank" rel="noopener noreferrer">Programació per a la ciència de dades</a></h3>
          </div>
 
@@ -108,8 +108,8 @@
 
    <div class="course" include-html="./done/ENG-expandable.html"></div>
    <div class="course" include-html="./done/MUPLL-expandable.html"></div>
-   <div class="course-no-expandable" include-html="./done/MISTIC.html"></div>
-   <div class="course-no-expandable" include-html="./done/MNET.html"></div>
+   <div class="course course--static" include-html="./done/MISTIC.html"></div>
+   <div class="course course--static" include-html="./done/MNET.html"></div>
 
  </main>
  <footer include-html="./footer.html"></footer>

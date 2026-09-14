@@ -86,7 +86,7 @@ a:hover {
   color: var(--color-terciari);
 }
 
-table.course-table {
+table.course__table {
   font-family: 'Lora', serif;
   font-size: medium;
 
@@ -129,7 +129,7 @@ table.course-table {
   }
 }
 
-.container {
+.layout__container {
   margin-left: 16px;
   margin-right: 16px;
   padding-left: 0;
@@ -137,7 +137,7 @@ table.course-table {
 }
 
 
-a.current {
+.navigation__link--current {
   color: var(--color-active-menu) !important;
 }
 
@@ -159,15 +159,15 @@ nav li:not(:last-child)::after {
   margin-right: 0.5em;
 }
 
-.clear {
+.u-clear {
   clear: both;
 }
 
-.clearfix {
+.u-clearfix {
   overflow: auto;
 }
 
-.course, .course-no-expandable {
+.course, .course--static {
   background-color: var(--color-fons);
   box-sizing: border-box;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
@@ -176,7 +176,7 @@ nav li:not(:last-child)::after {
   margin: 16px 0;
 }
 
-.course-content {
+.course__content {
   background-color: var(--color-quaternari);
   border-radius: 0 0 16px 16px;
   border-bottom: 5px solid var(--color-principal);
@@ -184,22 +184,22 @@ nav li:not(:last-child)::after {
   padding: 16px;
 }
 
-.dues-columnes {
+.footer__columns {
   display: grid;
   grid-template-columns: auto auto;
   justify-content: space-between;
   box-sizing: border-box;
 }
 
-.dues-columnes a:link,
-.dues-columnes a:visited,
-.dues-columnes a:active {
+.footer__columns a:link,
+.footer__columns a:visited,
+.footer__columns a:active {
   font-weight: 300;
   text-decoration: none;
   color: var(--color-quaternari);
 }
 
-.dues-columnes a:hover {
+.footer__columns a:hover {
   color: var(--color-secundari);
 }
 
@@ -219,7 +219,7 @@ nav li:not(:last-child)::after {
   gap: 8px;
 }
 
-.subject-toggle-btn {
+.subject__toggle {
   background: none;
   border: none;
   font-size: 20px;
@@ -235,12 +235,12 @@ nav li:not(:last-child)::after {
   font-weight: bold;
 }
 
-.subject-toggle-btn:hover {
+.subject__toggle:hover {
   background-color: rgba(0, 0, 0, 0.1);
   border-radius: 4px;
 }
 
-.subject-body {
+.subject__body {
   padding-top: 16px;
   font-weight: 300;
   max-height: 0;
@@ -248,7 +248,7 @@ nav li:not(:last-child)::after {
   animation: slideUp 0.4s ease-in-out forwards;
 }
 
-.subject-body.visible {
+.subject__body--visible {
   animation: slideDown 0.4s ease-in-out forwards;
   max-height: 1000px;
 }
@@ -275,35 +275,35 @@ nav li:not(:last-child)::after {
   }
 }
 
-.anivelladora {
+.subject--level {
   background-color: color-mix(in srgb, var(--color-vuit) 50%, white) !important;
 }
 
-.tbd {
+.subject--tbd {
   background-color: color-mix(in srgb, var(--color-set) 50%, white) !important;
 }
 
-.todo-Q1 {
+.subject--q1 {
   background-color: #ffbba8 !important;
 }
 
-.todo-Q2 {
+.subject--q2 {
   background-color: #fe8a6c !important;
 }
 
-.convalidada {
+.subject--validated {
   background-color: color-mix(in srgb, var(--color-quinari) 50%, white) !important;
 }
 
-.todo-WIP {
+.subject--wip {
   background-color: color-mix(in srgb, var(--color-terciari) 60%, white) !important;
 }
 
-.todo-WIP a:hover {
+.subject--wip a:hover {
   color: var(--color-principal);
 }
 
-.programming-language-subject-container {
+.subject__language {
   display: grid;
   grid-template-columns: auto;
   float: right;
@@ -311,13 +311,13 @@ nav li:not(:last-child)::after {
   row-gap: 8px;
 }
 
-.programming-language-subject {
+.subject__language-icon {
   height: var(--imatge-pl-subject);
   width: var(--imatge-pl-subject);
   object-fit: contain;
 }
 
-.programming-language {
+.subject__language-inline {
   height: var(--imatge-pl);
   width: var(--imatge-pl);
   object-fit: contain;
@@ -362,7 +362,7 @@ h2 {
   gap: 8px;
 }
 
-.course-expand-btn {
+.course__toggle {
   background: none;
   border: none;
   font-size: 20px;
@@ -379,7 +379,7 @@ h2 {
   transition: transform 0.3s ease;
 }
 
-.course-expand-btn.expanded {
+.course__toggle--expanded {
   transform: rotate(180deg);
 }
 
@@ -407,7 +407,7 @@ nav li {
 }
 
 @media screen and (min-width: 780px) {
-  .container {
+  .layout__container {
     margin-left: 32px;
     margin-right: 32px;
   }
@@ -424,7 +424,7 @@ nav li {
 }
 
 @media screen and (min-width: 1200px) {
-  .container {
+  .layout__container {
     margin-left: auto;
     margin-right: auto;
     padding-left: 0;
@@ -453,7 +453,7 @@ nav li {
     margin-top: 78px;
   }
 
-  table.course-table {
+  table.course__table {
     font-size: large;
 
     a:link,
@@ -482,27 +482,27 @@ nav li {
   cursor: pointer;
 }
 
-.button4 {
+.button--secondary {
   background-color: white;
   color: black;
   border: 2px solid #e7e7e7;
 }
 
-.button4:hover {
+.button--secondary:hover {
   background-color: #e7e7e7;
 }
 
-.button4:active {
+.button--secondary:active {
   background-color: #04AA6D;
   color: white;
 }
 
-.programming-language {
+.subject__language-inline {
   display: inline-block;
   vertical-align: middle;
 }
 
-.containerLlistaClonar {
+.clone-list {
   display: grid;
   grid-template-columns: auto auto;
   justify-content: space-between;
@@ -519,7 +519,7 @@ nav li {
   height: 100%;
 }
 
-.credits-charts-grid {
+.dashboard__charts {
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
@@ -553,6 +553,6 @@ nav li {
   max-height: 200px;
 }
 
-.matriculat {
+.course__row--enrolled {
   color: var(--color-quaternari);
 }

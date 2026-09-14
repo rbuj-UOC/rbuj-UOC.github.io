@@ -149,7 +149,7 @@ function generarMenuNavegacio() {
     { href: "index.2028-29.Q1.html", label: "2028-1" },
     { href: "index.2028-29.Q2.html", label: "2028-2" }
   ];
-  if (navList.children.length > 0 && navList.querySelector("a.current")) return;
+  if (navList.children.length > 0 && navList.querySelector("a.navigation__link--current")) return;
   navList.innerHTML = "";
   links.forEach(link => {
     const li = document.createElement("li");
@@ -159,7 +159,7 @@ function generarMenuNavegacio() {
     a.textContent = link.label;
 
     if (link.href === currentPage) {
-      a.classList.add("current");
+      a.classList.add("navigation__link--current");
     }
 
     li.appendChild(a);
@@ -248,14 +248,14 @@ function calcularCredits() {
 
   courses.forEach(course => {
     const h2Element = document.getElementById(course.label);
-    const courseContainer = h2Element ? h2Element.closest('.course-no-expandable, .course') : null;
+    const courseContainer = h2Element ? h2Element.closest('.course--static, .course') : null;
 
     if (courseContainer) {
-      course.matriculats = sumCreditsFromSubjects(courseContainer.querySelectorAll('.subject.todo-WIP'));
-      course.convalidats = sumCreditsFromSubjects(courseContainer.querySelectorAll('.subject.convalidada'));
-      course.anivelladors = sumCreditsFromSubjects(courseContainer.querySelectorAll('.subject.anivelladora'));
+      course.matriculats = sumCreditsFromSubjects(courseContainer.querySelectorAll('.subject.subject--wip'));
+      course.convalidats = sumCreditsFromSubjects(courseContainer.querySelectorAll('.subject.subject--validated'));
+      course.anivelladors = sumCreditsFromSubjects(courseContainer.querySelectorAll('.subject.subject--level'));
 
-      const aprovatsElements = courseContainer.querySelectorAll('.subject:not(.todo-WIP):not(.convalidada):not(.anivelladora):not(.tbd):not(.todo-Q1):not(.todo-Q2)');
+      const aprovatsElements = courseContainer.querySelectorAll('.subject:not(.subject--wip):not(.subject--validated):not(.subject--level):not(.tbd):not(.subject--q1):not(.subject--q2)');
       course.aprovats = sumCreditsFromSubjects(aprovatsElements);
 
       const totalCreditsObtinguts = course.convalidats + course.aprovats + course.anivelladors;
@@ -275,24 +275,24 @@ function calcularCredits() {
 // Mostrar els crèdits ECTS aprovats + anivelladors al final del títol de cada màster
 function actualitzarTitolsCredits() {
   courses.forEach(course => {
-    const container = document.getElementById(course.label);
-    if (container) {
-      const existingSpan = container.querySelector('.credits-info');
+    const layout__container = document.getElementById(course.label);
+    if (layout__container) {
+      const existingSpan = layout__container.querySelector('.credits-info');
       if (existingSpan) existingSpan.remove();
 
       const credits = document.createElement("span");
       credits.className = "credits-info";
       credits.textContent = `${course.title} (${course.aprovats + course.anivelladors} ECTS)`;
-      container.appendChild(credits);
+      layout__container.appendChild(credits);
     }
   });
 }
 
-// Generar el copyright dinàmicament
+// Generar el footer__copyright dinàmicament
 function actualitzarCopyright() {
   const copyrightYear = new Date().getFullYear();
   const copyrightText = '© ' + copyrightYear + ' Robert Buj';
-  const copyrightElement = document.getElementById('copyright-year');
+  const copyrightElement = document.getElementById('footer__copyright-year');
   if (copyrightElement) {
     copyrightElement.textContent = copyrightText;
   }
@@ -536,7 +536,7 @@ function plotGraficaPercentatge() {
 // Gràfiques amb l'estat dels crèdits dels màsters
 // -----------------------------------------------
 function plotCreditsChartsGrid() {
-  const container = document.getElementById("creditsChartsGrid");
+  const layout__container = document.getElementById("creditsChartsGrid");
 
   courses.forEach((course, index) => {
     // si no existeix el contenidor, no fem res
@@ -564,7 +564,7 @@ function plotCreditsChartsGrid() {
     canvas.id = "chart" + index;
     box.appendChild(canvas);
 
-    container.appendChild(box);
+    layout__container.appendChild(box);
 
     // Calculem els crèdits restants (assegura que no sigui inferior a 0)
     const restants = Math.max(0, course.totals - (course.aprovats + course.anivelladors + course.convalidats + course.matriculats));
@@ -613,9 +613,9 @@ function inicialitzarDashboard() {
   canvasCredits.id = "graficaCredits";
   dashboard.appendChild(canvasCredits);
 
-  // 2) <div class="containerLlistaClonar">
+  // 2) <div class="clone-list">
   const containerLlistaClonar = document.createElement("div");
-  containerLlistaClonar.classList.add("containerLlistaClonar");
+  containerLlistaClonar.classList.add("clone-list");
 
   // 2.1) <div id="clonar"> + llista generada
   const clonar = document.createElement("div");
@@ -623,7 +623,7 @@ function inicialitzarDashboard() {
 
   // Crear la taula
   const table = document.createElement("table");
-  table.classList.add("course-table");
+  table.classList.add("course__table");
 
   // Crear capçalera
   const thead = document.createElement("thead");
@@ -652,7 +652,7 @@ function inicialitzarDashboard() {
 
     const tr = document.createElement("tr");
     if (course.matriculats > 0) {
-      tr.classList.add("matriculat");
+      tr.classList.add("course__row--enrolled");
     }
 
     // Nom del curs
@@ -718,13 +718,13 @@ function inicialitzarDashboard() {
   percentatge.appendChild(canvasPercentatge);
   containerLlistaClonar.appendChild(percentatge);
 
-  // Afegim el container al dashboard
+  // Afegim el layout__container al dashboard
   dashboard.appendChild(containerLlistaClonar);
 
   // 3) <div id="creditsChartsGrid" class="credits-charts-grid">
   const grid = document.createElement("div");
   grid.id = "creditsChartsGrid";
-  grid.classList.add("credits-charts-grid");
+  grid.classList.add("dashboard__charts");
   dashboard.appendChild(grid);
 
   plotGraficaCredits();
@@ -738,32 +738,32 @@ function inicialitzarDashboard() {
 function inicialitzarCursosExpandibles() {
   const courseElements = document.querySelectorAll('.course');
   courseElements.forEach(course => {
-    if (course.querySelector('.course-expand-btn')) return;
+    if (course.querySelector('.course__toggle')) return;
     const dashboard = course.querySelector('.dashboard');
     if (dashboard) {
       const h2 = course.querySelector('h2');
       if (h2) {
         const expandBtn = document.createElement('button');
-        expandBtn.className = 'course-expand-btn';
+        expandBtn.className = 'course__toggle';
         expandBtn.textContent = '⥥';
         expandBtn.setAttribute('aria-label', 'Expandeix/col·lapsa totes les assignatures');
         h2.appendChild(expandBtn);
         expandBtn.addEventListener('click', function (e) {
           e.preventDefault();
           e.stopPropagation();
-          const subjectBodies = course.querySelectorAll('.subject-body');
-          const allVisible = Array.from(subjectBodies).every(body => body.classList.contains('visible'));
+          const subjectBodies = course.querySelectorAll('.subject__body');
+          const allVisible = Array.from(subjectBodies).every(body => body.classList.contains('subject__body--visible'));
           subjectBodies.forEach((body) => {
             if (allVisible) {
-              body.classList.remove('visible');
+              body.classList.remove('subject__body--visible');
             } else {
-              body.classList.add('visible');
+              body.classList.add('subject__body--visible');
             }
           });
           if (allVisible) {
-            expandBtn.classList.remove('expanded');
+            expandBtn.classList.remove('course__toggle--expanded');
           } else {
-            expandBtn.classList.add('expanded');
+            expandBtn.classList.add('course__toggle--expanded');
           }
         });
       }

@@ -6,19 +6,19 @@
 
 <style>
   body { font-family: sans-serif; }
-  .year { text-align: center; font-size: 2em; margin: 20px 0; }
-  .grid {
+  .calendar__year { text-align: center; font-size: 2em; margin: 20px 0; }
+  .calendar__grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
     max-width: 1200px;
     margin: 0 auto;
   }
-  .month {
+  .calendar__month {
     border: 1px solid #ccc;
     padding: 10px;
   }
-  .month-name {
+  .calendar__month-name {
     text-align: center;
     font-weight: bold;
     margin-bottom: 5px;
@@ -36,29 +36,29 @@
   th {
     border-bottom: 1px solid #ccc;
   }
-  .inici-curs {
+  .calendar__day--start {
     background: blue;
     color: white;
   }
-  .notes-finals {
+  .calendar__day--finals {
     border: 2px solid green;
     background-color: lightgreen;
     color: green;
   }
-  .aep {
+  .calendar__day--aep {
     border: 2px solid red;
     color: white;
     background-color: lightcoral;
   }
-  .actiu {
+  .calendar__day--active {
     border: none;
     color: gray;
     background-color: lightgray;
   }
-  .vacances {
+  .calendar__day--holiday {
     border: none;
   }
-  td .day-number {
+  td .calendar__day-number {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -66,7 +66,7 @@
     height: 24px;
     border-radius: 50%;
   }
-  td.avui .day-number {
+  td.calendar__day--today .calendar__day-number {
     display: inline-flex !important;
     align-items: center !important;
     justify-content: center !important;
@@ -165,15 +165,15 @@ function generarCalendari() {
     rangMesos.push({ any: anyActual + 1, mes });
   }
 
-  let html = `<div class="year">Calendari ${anyActual}-${anyActual + 1}</div><div class="grid">`;
+  let html = `<div class="calendar__year">Calendari ${anyActual}-${anyActual + 1}</div><div class="calendar__grid">`;
 
   rangMesos.forEach(({ any, mes }) => {
     const primerDia = new Date(any, mes, 1).getDay();
     const diesMes = new Date(any, mes + 1, 0).getDate();
     const offset = (primerDia === 0 ? 6 : primerDia - 1);
 
-    html += `<div class="month">
-               <div class="month-name">${mesos[mes]} ${any}</div>
+    html += `<div class="calendar__month">
+           <div class="calendar__month-name">${mesos[mes]} ${any}</div>
                <table><tr>`;
 
     diesSetmana.forEach(d => html += `<th>${d}</th>`);
@@ -186,21 +186,21 @@ function generarCalendari() {
       let classe = "";
       const esAvui = any === avuiAny && mes === avuiMes && dia === avuiDia;
       if (notesFinals.has(key)) {
-        classe = "notes-finals";
+        classe = "calendar__day--finals";
       } else if (iniciCurs.has(key)) {
-        classe = "inici-curs";
+        classe = "calendar__day--start";
       } else if (aep.has(key)) {
-        classe = "aep";
+        classe = "calendar__day--aep";
       } else if (vacances.has(key)) {
-        classe = "vacances";
+        classe = "calendar__day--holiday";
       } else {
-        classe = "actiu";
+        classe = "calendar__day--active";
       }
       if (esAvui) {
-        classe += " avui";
+        classe += " calendar__day--today";
       }
 
-      html += `<td class="${classe}"><span class="day-number">${dia}</span></td>`;
+      html += `<td class="${classe}"><span class="calendar__day-number">${dia}</span></td>`;
       if ((dia + offset) % 7 === 0) html += `</tr><tr>`;
     }
 

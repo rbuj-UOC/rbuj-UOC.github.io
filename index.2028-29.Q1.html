@@ -19,17 +19,17 @@
 
 <body>
  <header include-html="./header.html"></header>
- <main class="container">
+ <main class="layout__container">
    <h1>Cursos de postgrau a la UOC</h1>
 
    <div id="dashboard"></div>
 
    <div class="course">
      <h2 id="MUEI-24"></h2>
-     <div class="course-content">
+     <div class="course__content">
        <div class="dashboard">
 
-         <div id="05.582" class="subject anivelladora" include-html="./done/05.582.html"></div>
+         <div id="05.582" class="subject subject--level" include-html="./done/05.582.html"></div>
          <div id="M1.207" class="subject" include-html="./done/M1.207.html"></div>
          <div id="M1.208" class="subject" include-html="./done/M1.208.html"></div>
          <div id="M1.204" class="subject" include-html="./done/M1.204.html"></div>
@@ -37,13 +37,13 @@
          <div id="M1.209" class="subject" include-html="./done/M1.209.html"></div>
          <div id="M1.202" class="subject" include-html="./done/M1.202.html"></div>
 
-         <div id="M2.959b" class="subject convalidada">
+         <div id="M2.959b" class="subject subject--validated">
            <h3>
              Visualització de dades
            </h3>
          </div>
 
-         <div id="M1.770b" class="subject convalidada">
+         <div id="M1.770b" class="subject subject--validated">
            <h3>Fonaments de ciberseguretat</h3>
          </div>
 
@@ -77,7 +77,7 @@
            </h3>
          </div>
 
-         <div id="M1.211" class="subject todo-WIP">
+         <div id="M1.211" class="subject subject--wip">
            <h3>
              TFM
            </h3>
@@ -89,42 +89,42 @@
 
     <div class="course">
      <h2 id="MUVDA"></h2>
-     <div class="course-content">
+     <div class="course__content">
        <div class="dashboard">
 
-         <div class="subject ects-6 convalidada">
+         <div class="subject subject--ects-6 subject--validated">
            <h3>Anàlisi estadística multivariant i inferència estadística</h3>
          </div>
 
-         <div class="subject ects-6 convalidada">
+         <div class="subject subject--ects-6 subject--validated">
            <h3>Modelització, predicció i optimització en aprenentatge automàtic</h3>
          </div>
 
-         <div class="subject ects-6 convalidada">
+         <div class="subject subject--ects-6 subject--validated">
            <h3>Preguntes analítiques, dades, coneixement i IA</h3>
          </div>
 
-         <div class="subject ects-6 convalidada">
+         <div class="subject subject--ects-6 subject--validated">
            <h3>Visualització de dades</h3>
          </div>
 
-         <div class="subject ects-6 todo-Q1">
+         <div class="subject subject--ects-6 subject--q1">
            <h3>Anàlisi de xarxes socials i comunitats</h3>
          </div>
 
-         <div class="subject ects-6 todo-Q2">
+         <div class="subject subject--ects-6 subject--q2">
            <h3>Anàlisi de textos</h3>
          </div>
 
-         <div class="subject ects-6 tbd">
+         <div class="subject subject--ects-6 subject--tbd">
            <h3>Disseny de la investigació i models d'anàlisi</h3>
          </div>
 
-         <div class="subject ects-6 tbd">
+         <div class="subject subject--ects-6 subject--tbd">
            <h3>Instruments qualitatius d'anàlisi i presentació de dades</h3>
          </div>
 
-         <div class="subject ects-6 tbd">
+         <div class="subject subject--ects-6 subject--tbd">
            <h3>TFM</h3>
          </div>
 
@@ -140,7 +140,7 @@
    <div class="course" include-html="./done/MUDLAW-expandable.html"></div>
    <div class="course" include-html="./done/ENG-expandable.html"></div>
    <div class="course" include-html="./done/MUPLL-expandable.html"></div>
-   <div class="course-no-expandable" include-html="./done/MNET.html"></div>
+   <div class="course course--static" include-html="./done/MNET.html"></div>
 
  </main>
  <footer include-html="./footer.html"></footer>

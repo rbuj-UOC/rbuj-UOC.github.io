@@ -19,17 +19,17 @@
 
 <body>
  <header include-html="./header.html"></header>
- <main class="container">
+ <main class="layout__container">
    <h1>Cursos de postgrau a la UOC</h1>
 
    <div id="dashboard"></div>
 
    <div class="course">
      <h2 id="MUEI-24"></h2>
-     <div class="course-content">
+     <div class="course__content">
        <div class="dashboard">
 
-         <div id="05.582" class="subject anivelladora" include-html="./done/05.582.html"></div>
+         <div id="05.582" class="subject subject--level" include-html="./done/05.582.html"></div>
          <div id="M1.207" class="subject" include-html="./done/M1.207.html"></div>
          <div id="M1.208" class="subject" include-html="./done/M1.208.html"></div>
          <div id="M1.204" class="subject" include-html="./done/M1.204.html"></div>
@@ -37,7 +37,7 @@
          <div id="M1.209" class="subject" include-html="./done/M1.209.html"></div>
          <div id="M1.202" class="subject" include-html="./done/M1.202.html"></div>
 
-         <div id="M2.959b" class="subject convalidada">
+         <div id="M2.959b" class="subject subject--validated">
            <h3>
              Visualització de dades
            </h3>
@@ -47,48 +47,48 @@
       </div>
    </div>
 
-   <div class="course-no-expandable">
+   <div class="course course--static">
      <h2 id="MUCD"></h2>
-     <div class="course-content">
+     <div class="course__content">
        <div class="dashboard">
 
-         <div id="M2.991" class="subject convalidada">
+         <div id="M2.991" class="subject subject--validated">
            <h3>Aprenentatge automàtic</h3>
          </div>
 
-         <div id="M2.888" class="subject anivelladora">
+         <div id="M2.888" class="subject subject--level">
            <h3>Bases de dades analítiques</h3>
          </div>
 
-         <div id="M2.503" class="subject anivelladora">
+         <div id="M2.503" class="subject subject--level">
            <h3><a href="https://github.com/rbuj-UOC/python_datascience/" target="_blank" rel="noopener noreferrer">Programació per a la ciència de dades</a></h3>
          </div>
 
-         <div id="M2.990" class="subject todo-WIP">
+         <div id="M2.990" class="subject subject--wip">
            <h3><a href="http://hdl.handle.net/10609/151790" target="_blank" rel="noopener noreferrer">Anàlisi estadística</a></h3>
          </div>
 
-         <div id="M2.950" class="subject todo-WIP">
+         <div id="M2.950" class="subject subject--wip">
            <h3><a href="https://hdl.handle.net/10609/141586" target="_blank" rel="noopener noreferrer">Fonaments de la ciència de dades</a></h3>
          </div>
 
-         <div id="M2.951" class="subject todo-WIP">
+         <div id="M2.951" class="subject subject--wip">
            <h3><a href="https://hdl.handle.net/10609/148646" target="_blank" rel="noopener noreferrer">Tipologia i cicle de vida de les dades</a></h3>
          </div>
 
-         <div id="M2.959" class="subject todo-WIP">
+         <div id="M2.959" class="subject subject--wip">
            <h3><a href="https://hdl.handle.net/10609/141606" target="_blank" rel="noopener noreferrer">Visualització de dades</a></h3>
          </div>
 
-         <div id="M2.958" class="subject todo-WIP">
+         <div id="M2.958" class="subject subject--wip">
            <h3>Anàlisi de dades en entorns Big Data</h3>
          </div>
 
-         <div id="M2.989" class="subject todo-WIP">
+         <div id="M2.989" class="subject subject--wip">
            <h3>Arquitectures de bases de dades no relacionals</h3>
          </div>
 
-         <div id="M2.975" class="subject todo-WIP">
+         <div id="M2.975" class="subject subject--wip">
            <h3>Deep learning</h3>
          </div>
 
@@ -96,28 +96,28 @@
      </div>
    </div>
 
-   <div class="course-no-expandable">
+   <div class="course course--static">
      <h2 id="MUBB"></h2>
-     <div class="course-content">
+     <div class="course__content">
        <div class="dashboard">
 
-         <div id="M0.155" class="subject convalidada">
+         <div id="M0.155" class="subject subject--validated">
            <h3>Inferència estadística</h3>
          </div>
 
-         <div id="M0.163" class="subject convalidada">
+         <div id="M0.163" class="subject subject--validated">
            <h3>Machine Learning</h3>
          </div>
 
-         <div id="M0.152" class="subject convalidada">
+         <div id="M0.152" class="subject subject--validated">
            <h3>Programació per a la bioinformàtica</h3>
          </div>
 
-         <div id="M0.150" class="subject todo-WIP">
+         <div id="M0.150" class="subject subject--wip">
            <h3>Biologia molecular</h3>
          </div>
 
-         <div id="M0.153" class="subject todo-WIP">
+         <div id="M0.153" class="subject subject--wip">
            <h3>Programari per a l'anàlisi de dades</h3>
          </div>
 
@@ -125,28 +125,28 @@
      </div>
    </div>
 
-   <div class="course-no-expandable">
+   <div class="course course--static">
      <h2 id="Python"></h2>
-     <div class="course-content">
+     <div class="course__content">
        <div class="dashboard">
 
-         <div id="12.201" class="subject todo-WIP">
+         <div id="12.201" class="subject subject--wip">
            <h3>Python A1</h3>
          </div>
 
-         <div id="12.202" class="subject todo-WIP">
+         <div id="12.202" class="subject subject--wip">
            <h3>Python A2</h3>
          </div>
 
-         <div id="12.205" class="subject todo-WIP">
+         <div id="12.205" class="subject subject--wip">
            <h3>Python B1</h3>
          </div>
 
-         <div id="12.207" class="subject todo-WIP">
+         <div id="12.207" class="subject subject--wip">
            <h3>Python B2</h3>
          </div>
 
-         <div id="12.213" class="subject todo-WIP">
+         <div id="12.213" class="subject subject--wip">
            <h3>Python C1</h3>
          </div>
 
@@ -154,28 +154,28 @@
      </div>
    </div>
 
-   <div class="course-no-expandable">
+   <div class="course course--static">
      <h2 id="JavaScript"></h2>
-     <div class="course-content">
+     <div class="course__content">
        <div class="dashboard">
 
-         <div id="11.204" class="subject todo-WIP">
+         <div id="11.204" class="subject subject--wip">
            <h3>JavaScript A1</h3>
          </div>
 
-         <div id="11.203" class="subject todo-WIP">
+         <div id="11.203" class="subject subject--wip">
            <h3>JavaScript A2</h3>
          </div>
 
-         <div id="11.206" class="subject todo-WIP">
+         <div id="11.206" class="subject subject--wip">
            <h3>JavaScript B1</h3>
          </div>
 
-         <div id="11.208" class="subject todo-WIP">
+         <div id="11.208" class="subject subject--wip">
            <h3>JavaScript B2</h3>
          </div>
 
-         <div id="11.212" class="subject todo-WIP">
+         <div id="11.212" class="subject subject--wip">
            <h3>JavaScript C1</h3>
          </div>
 
@@ -186,8 +186,8 @@
    <div class="course" include-html="./done/MUDLAW-expandable.html"></div>
    <div class="course" include-html="./done/ENG-expandable.html"></div>
    <div class="course" include-html="./done/MUPLL-expandable.html"></div>
-   <div class="course-no-expandable" include-html="./done/MISTIC.html"></div>
-   <div class="course-no-expandable" include-html="./done/MNET.html"></div>
+   <div class="course course--static" include-html="./done/MISTIC.html"></div>
+   <div class="course course--static" include-html="./done/MNET.html"></div>
 
  </main>
  <footer include-html="./footer.html"></footer>

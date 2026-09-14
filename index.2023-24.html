@@ -19,21 +19,21 @@
 
 <body>
  <header include-html="./header.html"></header>
- <main class="container">
+ <main class="layout__container">
    <h1>Cursos de postgrau a la UOC</h1>
 
    <div id="dashboard"></div>
 
    <div class="course">
      <h2 id="ENG"></h2>
-     <div class="course-content">
+     <div class="course__content">
        <div class="dashboard">
 
-         <div id="00.023" class="subject clearfix" include-html="./done/ENG-expandable-A1.1.html"></div>
-         <div id="00.024" class="subject clearfix" include-html="./done/ENG-expandable-A1.2.html"></div>
-         <div id="00.025" class="subject clearfix" include-html="./done/ENG-expandable-A2.1.html"></div>
+         <div id="00.023" class="subject u-clearfix" include-html="./done/ENG-expandable-A1.1.html"></div>
+         <div id="00.024" class="subject u-clearfix" include-html="./done/ENG-expandable-A1.2.html"></div>
+         <div id="00.025" class="subject u-clearfix" include-html="./done/ENG-expandable-A2.1.html"></div>
 
-         <div id="00.096" class="subject todo-WIP">
+         <div id="00.096" class="subject subject--wip">
            <h3>English A2.2</h3>
          </div>
 
@@ -43,21 +43,21 @@
 
    <div class="course">
      <h2 id="MUEI"></h2>
-     <div class="course-content">
+     <div class="course__content">
        <div class="dashboard">
 
-         <div id="05.582" class="subject anivelladora" include-html="./done/05.582.html"></div>
+         <div id="05.582" class="subject subject--level" include-html="./done/05.582.html"></div>
          <div id="M1.207" class="subject" include-html="./done/M1.207.html"></div>
          <div id="M1.208" class="subject" include-html="./done/M1.208.html"></div>
          <div id="M1.204" class="subject" include-html="./done/M1.204.html"></div>
 
-         <div id="M1.306" class="subject todo-WIP">
+         <div id="M1.306" class="subject subject--wip">
            <h3>
              <a href="http://hdl.handle.net/10609/69045" target="_blank" rel="noopener noreferrer">Plataformes de publicació i distribució</a>
            </h3>
          </div>
 
-         <div id="M1.203" class="subject todo-WIP">
+         <div id="M1.203" class="subject subject--wip">
            <h3>
              Tècniques avançades d'enginyeria del programari
            </h3>
@@ -67,42 +67,42 @@
      </div>
    </div>
 
-   <div class="course-no-expandable">
+   <div class="course course--static">
      <h2 id="MUDLAW"></h2>
-     <div class="course-content">
+     <div class="course__content">
        <div class="dashboard">
 
-         <div id="M1.909" class="subject todo-WIP">
+         <div id="M1.909" class="subject subject--wip">
            <h3>
              Disseny d'interfícies interactives
            </h3>
          </div>
 
-         <div id="M4.252" class="subject todo-WIP">
+         <div id="M4.252" class="subject subject--wip">
            <h3>
              HTML i CSS
            </h3>
          </div>
 
-         <div id="M4.253" class="subject todo-WIP">
+         <div id="M4.253" class="subject subject--wip">
            <h3>
              Programació JavaScript per a programadors
            </h3>
          </div>
 
-         <div id="M4.255" class="subject todo-WIP">
+         <div id="M4.255" class="subject subject--wip">
            <h3>
              Desenvolupament back-end amb PHP
            </h3>
          </div>
 
-         <div id="M4.254" class="subject todo-WIP">
+         <div id="M4.254" class="subject subject--wip">
            <h3>
              Desenvolupament front-end amb frameworks JavaScript
            </h3>
          </div>
 
-         <div id="M4.257" class="subject todo-WIP">
+         <div id="M4.257" class="subject subject--wip">
            <h3>
              Eines HTML i CSS I
            </h3>
@@ -113,8 +113,8 @@
    </div>
 
    <div class="course" include-html="./done/MUPLL-expandable.html"></div>
-   <div class="course-no-expandable" include-html="./done/MISTIC.html"></div>
-   <div class="course-no-expandable" include-html="./done/MNET.html"></div>
+   <div class="course course--static" include-html="./done/MISTIC.html"></div>
+   <div class="course course--static" include-html="./done/MNET.html"></div>
 
  </main>
  <footer include-html="./footer.html"></footer>

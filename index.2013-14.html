@@ -19,20 +19,20 @@
 
 <body>
  <header include-html="./header.html"></header>
- <main class="container">
+ <main class="layout__container">
    <h1>Cursos de postgrau a la UOC</h1>
 
    <div id="dashboard"></div>
 
    <div class="course">
      <h2 id="ENG"></h2>
-     <div class="course-content">
+     <div class="course__content">
        <div class="dashboard">
 
-         <div id="00.023" class="subject clearfix" include-html="./done/ENG-expandable-A1.1.html"></div>
-         <div id="00.024" class="subject clearfix" include-html="./done/ENG-expandable-A1.2.html"></div>
+         <div id="00.023" class="subject u-clearfix" include-html="./done/ENG-expandable-A1.1.html"></div>
+         <div id="00.024" class="subject u-clearfix" include-html="./done/ENG-expandable-A1.2.html"></div>
 
-         <div id="00.025" class="subject todo-WIP">
+         <div id="00.025" class="subject subject--wip">
            <h3>English A2.1</h3>
          </div>
 
@@ -42,7 +42,7 @@
 
    <div class="course">
      <h2 id="MUPLL"></h2>
-     <div class="course-content">
+     <div class="course__content">
        <div class="dashboard">
 
          <div id="M2.002" class="subject" include-html="./done/M2.002.html"></div>
@@ -55,7 +55,7 @@
          <div id="M2.008" class="subject" include-html="./done/M2.008.html"></div>
          <div id="M2.010" class="subject" include-html="./done/M2.010.html"></div>
 
-         <div id="M2.054" class="subject todo-WIP">
+         <div id="M2.054" class="subject subject--wip">
            <h3>
              TFM
            </h3>
@@ -67,9 +67,9 @@
 
    <div class="course">
      <h2 id="MUEI"></h2>
-     <div class="course-content">
+     <div class="course__content">
        <div class="dashboard">
-         <div id="05.582" class="subject anivelladora" include-html="./done/05.582.html"></div>
+         <div id="05.582" class="subject subject--level" include-html="./done/05.582.html"></div>
          <div id="M1.207" class="subject" include-html="./done/M1.207.html"></div>
          <div id="M1.208" class="subject" include-html="./done/M1.208.html"></div>
          <div id="M1.204" class="subject" include-html="./done/M1.204.html"></div>
@@ -77,8 +77,8 @@
      </div>
    </div>
 
-   <div class="course-no-expandable" include-html="./done/MISTIC.html"></div>
-   <div class="course-no-expandable" include-html="./done/MNET.html"></div>
+   <div class="course course--static" include-html="./done/MISTIC.html"></div>
+   <div class="course course--static" include-html="./done/MNET.html"></div>
 
  </main>
  <footer include-html="./footer.html"></footer>
