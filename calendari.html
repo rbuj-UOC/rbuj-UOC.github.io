@@ -128,11 +128,11 @@ function generarCalendari() {
       aep.add(key);
     }
   }
-  for (let mes = 9; mes <= 10; mes++) {
+  for (let mes = 10; mes <= 11; mes++) {
     for (let dia = 1; dia <= 31; dia++) {
       const key = String(mes + 1).padStart(2, "0") + "-" + String(dia).padStart(2, "0");
-      if (mes === 9 && dia < 31) continue; // Comença el 31 d'octubre
-      if (mes === 10 && dia > 26) break; // Acaba el 26 de novembre
+      if (mes === 10 && dia < 30) continue; // Comença el 30 de novembre
+      if (mes === 11 && dia > 15) break; // Acaba el 15 de desembre
       aep.add(key);
     }
   }
