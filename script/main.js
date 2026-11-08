@@ -741,6 +741,8 @@ function inicialitzarDashboard() {
 function inicialitzarCursosExpandibles() {
   const courseElements = document.querySelectorAll('.course');
   courseElements.forEach(course => {
+    // Oculta el botó d'expansió si el contingut del curs és estàtic (course--static")
+    if (course.classList.contains('course--static')) return;
     if (course.querySelector('.course__toggle')) return;
     const dashboard = course.querySelector('.dashboard');
     if (dashboard) {
