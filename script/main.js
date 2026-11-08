@@ -3,6 +3,7 @@ const courses = [
   { title: "Escola d'idiomes: English", label: "ENG", totals: 48, preu: 1205.91 },
   { title: "Escola de programació: Python", label: "Python", totals: 36, preu: 371 },
   { title: "Escola de programació: JavaScript", label: "JavaScript", totals: 36, preu: 371 },
+  { title: "Formació complementària", label: "FC", totals: 1, preu: 241.50 },
   { title: "Màster en .NET", label: "MNET", totals: 32, preu: 3200 },
   { title: "Màster interuniversitari en seguretat de les TIC", label: "MISTIC", totals: 60, preu: 624.85 },
   { title: "Màster universitari en analisi i visualització de dades aplicades", label: "MUVDA", totals: 60, preu: 0 },
@@ -114,6 +115,8 @@ const subjects = [
   { id: "M1.770", name: "Fonaments de ciberseguretat", credits: 6 },
   { id: "M1.777", name: "Seguretat en cloud computing", credits: 6 },
   { id: "M1.779", name: "Treball de fi de màster", credits: 12 },
+  /* FC */
+  { id: "OP.304", name: "Claus de la IA generativa en les TIC", credits: 1 },
   /* MUVDA */
   { id: "MUVDA-01", name: "Anàlisi estadística multivariant i inferència estadística", credits: 6 },
   { id: "MUVDA-02", name: "Modelització, predicció i optimització en aprenentatge automàtic", credits: 6 },
@@ -330,7 +333,7 @@ function plotGraficaCredits() {
     '27/28-1', '27/28-2', '28/29-1', '28/29-2'
   ];
 
-  const data = [15, 20, 32, 22, 7.5, 7.5, 11.5, 7.5, 18, 34, 24, 24, 30, 34, 34, 34, 27, 30, 36, 36];
+  const data = [15, 20, 32, 22, 7.5, 7.5, 11.5, 7.5, 18, 34, 24, 24, 30, 34, 35, 34, 27, 30, 36, 36];
   const mean = data.reduce((sum, value) => sum + value, 0) / data.length;
 
   // Convertir anys a índexs
