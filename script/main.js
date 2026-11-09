@@ -1,8 +1,8 @@
 // Dades de totes les gràfiques amb les estadístiques dels màsters
 const courses = [
   { title: "Escola d'idiomes: English", label: "ENG", totals: 48, preu: 1205.91 },
-  { title: "Escola de programació: Python", label: "Python", totals: 36, preu: 371 },
   { title: "Escola de programació: JavaScript", label: "JavaScript", totals: 36, preu: 371 },
+  { title: "Escola de programació: Python", label: "Python", totals: 36, preu: 371 },
   { title: "Formació complementària", label: "FC", totals: 1, preu: 241.50 },
   { title: "Màster en .NET", label: "MNET", totals: 32, preu: 3200 },
   { title: "Màster interuniversitari en seguretat de les TIC", label: "MISTIC", totals: 60, preu: 624.85 },
@@ -145,8 +145,7 @@ function generarMenuNavegacio() {
     { href: "index.2023-24.html", label: "2023/24" },
     { href: "index.2024-25.html", label: "2024/25" },
     { href: "index.2025-26.html", label: "2025/26" },
-    { href: "index.html", label: "2026-1" },
-    { href: "index.2026-27.Q2.html", label: "2026-2" },
+    { href: "index.html", label: "2026/27" },
     { href: "index.2027-28.Q1.html", label: "2027-1" },
     { href: "index.2027-28.Q2.html", label: "2027-2" },
     { href: "index.2028-29.Q1.html", label: "2028-1" },
@@ -420,7 +419,7 @@ function plotGraficaCredits() {
             "index.2025-26.html",
             "index.2025-26.html",
             "index.html",
-            "index.2026-27.Q2.html",
+            "index.html",
             "index.2027-28.Q1.html",
             "index.2027-28.Q2.html",
             "index.2028-29.Q1.html",
